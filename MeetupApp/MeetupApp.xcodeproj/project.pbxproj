@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		36B3EB4E27E9B566C74EF83A /* Pods_MeetupAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D2E7669B93645DF91792340 /* Pods_MeetupAppTests.framework */; };
-		5684576921AC4A1B0048EA93 /* GoogleService-Info-2.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5684576821AC4A1B0048EA93 /* GoogleService-Info-2.plist */; };
+		5684576B21AC4DEA0048EA93 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5684576A21AC4DEA0048EA93 /* GoogleService-Info.plist */; };
 		56CE72F221AC3727009D4F75 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56CE72F121AC3727009D4F75 /* AppDelegate.swift */; };
 		56CE72F421AC3727009D4F75 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56CE72F321AC3727009D4F75 /* ViewController.swift */; };
 		56CE72F721AC3727009D4F75 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 56CE72F521AC3727009D4F75 /* Main.storyboard */; };
@@ -40,7 +40,7 @@
 /* Begin PBXFileReference section */
 		1C99168B739DA94631271066 /* Pods_MeetupApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MeetupApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3C665BC41ABF96C3E2B71322 /* Pods-MeetupApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MeetupApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-MeetupApp/Pods-MeetupApp.release.xcconfig"; sourceTree = "<group>"; };
-		5684576821AC4A1B0048EA93 /* GoogleService-Info-2.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info-2.plist"; sourceTree = "<group>"; };
+		5684576A21AC4DEA0048EA93 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		56CE72EE21AC3727009D4F75 /* MeetupApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MeetupApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		56CE72F121AC3727009D4F75 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		56CE72F321AC3727009D4F75 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -132,7 +132,7 @@
 				56CE72F821AC3729009D4F75 /* Assets.xcassets */,
 				56CE72FA21AC3729009D4F75 /* LaunchScreen.storyboard */,
 				56CE72FD21AC3729009D4F75 /* Info.plist */,
-				5684576821AC4A1B0048EA93 /* GoogleService-Info-2.plist */,
+				5684576A21AC4DEA0048EA93 /* GoogleService-Info.plist */,
 			);
 			path = MeetupApp;
 			sourceTree = "<group>";
@@ -277,8 +277,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				56CE72FC21AC3729009D4F75 /* LaunchScreen.storyboard in Resources */,
+				5684576B21AC4DEA0048EA93 /* GoogleService-Info.plist in Resources */,
 				56CE72F921AC3729009D4F75 /* Assets.xcassets in Resources */,
-				5684576921AC4A1B0048EA93 /* GoogleService-Info-2.plist in Resources */,
 				56CE72F721AC3727009D4F75 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
