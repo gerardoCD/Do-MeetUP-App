@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		36B3EB4E27E9B566C74EF83A /* Pods_MeetupAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D2E7669B93645DF91792340 /* Pods_MeetupAppTests.framework */; };
+		5684576921AC4A1B0048EA93 /* GoogleService-Info-2.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5684576821AC4A1B0048EA93 /* GoogleService-Info-2.plist */; };
 		56CE72F221AC3727009D4F75 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56CE72F121AC3727009D4F75 /* AppDelegate.swift */; };
 		56CE72F421AC3727009D4F75 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56CE72F321AC3727009D4F75 /* ViewController.swift */; };
 		56CE72F721AC3727009D4F75 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 56CE72F521AC3727009D4F75 /* Main.storyboard */; };
@@ -14,6 +16,8 @@
 		56CE72FC21AC3729009D4F75 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 56CE72FA21AC3729009D4F75 /* LaunchScreen.storyboard */; };
 		56CE730721AC3729009D4F75 /* MeetupAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56CE730621AC3729009D4F75 /* MeetupAppTests.swift */; };
 		56CE731221AC3729009D4F75 /* MeetupAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56CE731121AC3729009D4F75 /* MeetupAppUITests.swift */; };
+		773316EE157673AD3E15C606 /* Pods_MeetupAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DEADD27C06B2CD8E2C24EEF /* Pods_MeetupAppUITests.framework */; };
+		BD6C7674A3596A60431192CC /* Pods_MeetupApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C99168B739DA94631271066 /* Pods_MeetupApp.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +38,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1C99168B739DA94631271066 /* Pods_MeetupApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MeetupApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3C665BC41ABF96C3E2B71322 /* Pods-MeetupApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MeetupApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-MeetupApp/Pods-MeetupApp.release.xcconfig"; sourceTree = "<group>"; };
+		5684576821AC4A1B0048EA93 /* GoogleService-Info-2.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info-2.plist"; sourceTree = "<group>"; };
 		56CE72EE21AC3727009D4F75 /* MeetupApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MeetupApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		56CE72F121AC3727009D4F75 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		56CE72F321AC3727009D4F75 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -47,6 +54,13 @@
 		56CE730D21AC3729009D4F75 /* MeetupAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MeetupAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		56CE731121AC3729009D4F75 /* MeetupAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeetupAppUITests.swift; sourceTree = "<group>"; };
 		56CE731321AC3729009D4F75 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		58D8E47B99A0929C27EEBF41 /* Pods-MeetupAppUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MeetupAppUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MeetupAppUITests/Pods-MeetupAppUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		7D2E7669B93645DF91792340 /* Pods_MeetupAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MeetupAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8576C1A4F7EAFD8B8A438854 /* Pods-MeetupApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MeetupApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MeetupApp/Pods-MeetupApp.debug.xcconfig"; sourceTree = "<group>"; };
+		8DEADD27C06B2CD8E2C24EEF /* Pods_MeetupAppUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MeetupAppUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A687D5378255DBD054EE0423 /* Pods-MeetupAppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MeetupAppUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MeetupAppUITests/Pods-MeetupAppUITests.release.xcconfig"; sourceTree = "<group>"; };
+		B395F0A299188E15ADD498C3 /* Pods-MeetupAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MeetupAppTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MeetupAppTests/Pods-MeetupAppTests.release.xcconfig"; sourceTree = "<group>"; };
+		D960C6737EDC0FB2935B54F4 /* Pods-MeetupAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MeetupAppTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MeetupAppTests/Pods-MeetupAppTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +68,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BD6C7674A3596A60431192CC /* Pods_MeetupApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -61,6 +76,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				36B3EB4E27E9B566C74EF83A /* Pods_MeetupAppTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -68,12 +84,23 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				773316EE157673AD3E15C606 /* Pods_MeetupAppUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5267F3B76C2C52B085F55AB8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1C99168B739DA94631271066 /* Pods_MeetupApp.framework */,
+				7D2E7669B93645DF91792340 /* Pods_MeetupAppTests.framework */,
+				8DEADD27C06B2CD8E2C24EEF /* Pods_MeetupAppUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		56CE72E521AC3727009D4F75 = {
 			isa = PBXGroup;
 			children = (
@@ -81,6 +108,8 @@
 				56CE730521AC3729009D4F75 /* MeetupAppTests */,
 				56CE731021AC3729009D4F75 /* MeetupAppUITests */,
 				56CE72EF21AC3727009D4F75 /* Products */,
+				84E434DC936F6C9984B1D7B1 /* Pods */,
+				5267F3B76C2C52B085F55AB8 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -103,6 +132,7 @@
 				56CE72F821AC3729009D4F75 /* Assets.xcassets */,
 				56CE72FA21AC3729009D4F75 /* LaunchScreen.storyboard */,
 				56CE72FD21AC3729009D4F75 /* Info.plist */,
+				5684576821AC4A1B0048EA93 /* GoogleService-Info-2.plist */,
 			);
 			path = MeetupApp;
 			sourceTree = "<group>";
@@ -125,6 +155,19 @@
 			path = MeetupAppUITests;
 			sourceTree = "<group>";
 		};
+		84E434DC936F6C9984B1D7B1 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				8576C1A4F7EAFD8B8A438854 /* Pods-MeetupApp.debug.xcconfig */,
+				3C665BC41ABF96C3E2B71322 /* Pods-MeetupApp.release.xcconfig */,
+				D960C6737EDC0FB2935B54F4 /* Pods-MeetupAppTests.debug.xcconfig */,
+				B395F0A299188E15ADD498C3 /* Pods-MeetupAppTests.release.xcconfig */,
+				58D8E47B99A0929C27EEBF41 /* Pods-MeetupAppUITests.debug.xcconfig */,
+				A687D5378255DBD054EE0423 /* Pods-MeetupAppUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -132,9 +175,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 56CE731621AC3729009D4F75 /* Build configuration list for PBXNativeTarget "MeetupApp" */;
 			buildPhases = (
+				22DB0D22B96E47B5862E4445 /* [CP] Check Pods Manifest.lock */,
 				56CE72EA21AC3727009D4F75 /* Sources */,
 				56CE72EB21AC3727009D4F75 /* Frameworks */,
 				56CE72EC21AC3727009D4F75 /* Resources */,
+				9F93A31552E459F9E776FD44 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -149,6 +194,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 56CE731921AC3729009D4F75 /* Build configuration list for PBXNativeTarget "MeetupAppTests" */;
 			buildPhases = (
+				276F120B84E103F7AA2EC08A /* [CP] Check Pods Manifest.lock */,
 				56CE72FE21AC3729009D4F75 /* Sources */,
 				56CE72FF21AC3729009D4F75 /* Frameworks */,
 				56CE730021AC3729009D4F75 /* Resources */,
@@ -167,6 +213,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 56CE731C21AC3729009D4F75 /* Build configuration list for PBXNativeTarget "MeetupAppUITests" */;
 			buildPhases = (
+				8F272B0371A29C73A6A630A5 /* [CP] Check Pods Manifest.lock */,
 				56CE730921AC3729009D4F75 /* Sources */,
 				56CE730A21AC3729009D4F75 /* Frameworks */,
 				56CE730B21AC3729009D4F75 /* Resources */,
@@ -231,6 +278,7 @@
 			files = (
 				56CE72FC21AC3729009D4F75 /* LaunchScreen.storyboard in Resources */,
 				56CE72F921AC3729009D4F75 /* Assets.xcassets in Resources */,
+				5684576921AC4A1B0048EA93 /* GoogleService-Info-2.plist in Resources */,
 				56CE72F721AC3727009D4F75 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -250,6 +298,99 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		22DB0D22B96E47B5862E4445 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MeetupApp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		276F120B84E103F7AA2EC08A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MeetupAppTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8F272B0371A29C73A6A630A5 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MeetupAppUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9F93A31552E459F9E776FD44 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-MeetupApp/Pods-MeetupApp-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MeetupApp/Pods-MeetupApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		56CE72EA21AC3727009D4F75 /* Sources */ = {
@@ -430,6 +571,7 @@
 		};
 		56CE731721AC3729009D4F75 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8576C1A4F7EAFD8B8A438854 /* Pods-MeetupApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -448,6 +590,7 @@
 		};
 		56CE731821AC3729009D4F75 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3C665BC41ABF96C3E2B71322 /* Pods-MeetupApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -466,6 +609,7 @@
 		};
 		56CE731A21AC3729009D4F75 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D960C6737EDC0FB2935B54F4 /* Pods-MeetupAppTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -487,6 +631,7 @@
 		};
 		56CE731B21AC3729009D4F75 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B395F0A299188E15ADD498C3 /* Pods-MeetupAppTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -508,6 +653,7 @@
 		};
 		56CE731D21AC3729009D4F75 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 58D8E47B99A0929C27EEBF41 /* Pods-MeetupAppUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -528,6 +674,7 @@
 		};
 		56CE731E21AC3729009D4F75 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A687D5378255DBD054EE0423 /* Pods-MeetupAppUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
