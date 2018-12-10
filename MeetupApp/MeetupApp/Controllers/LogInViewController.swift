@@ -7,24 +7,48 @@
 //
 
 import UIKit
+    
+    // A delay function
+    func delay(_ seconds: Double, completion: @escaping ()->Void) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + seconds, execute: completion)
+    }
 
 class LogInViewController: UIViewController {
+    
+    @IBOutlet weak var heading: UIImageView!
+    @IBOutlet weak var emailLabel: UILabel!
+    @IBOutlet weak var passwordLabel: UILabel!
+    @IBOutlet weak var peopleImage: UIImageView!
+    @IBOutlet weak var loginButton: UIButton!
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        //Login button aspects
+        loginButton.layer.cornerRadius = 8.0
+        loginButton.layer.masksToBounds = true
+    }
+    
+    //Settings after the view appears
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        UIView.animate(withDuration: 1.0){
+            self.heading.transform = CGAffineTransform.init(scaleX: 2.0, y: 2.0)
+            self.heading.transform = CGAffineTransform.init(scaleX: 1.0, y: 1.0)
+        }
+    }
+    
+    //The button was tapped 
+    @IBAction func signInTapped(_ sender: Any) {
+        UIView.animate(withDuration: 0.5, delay: 0.3, options: [.curveEaseInOut, .autoreverse], animations:{
+            self.peopleImage.transform = CGAffineTransform.init(scaleX: 2.0, y: 2.0)
+            self.peopleImage.transform = CGAffineTransform.init(scaleX: 1.0, y: 1.0)
+            
+        },
+                       completion: nil
+        )
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
