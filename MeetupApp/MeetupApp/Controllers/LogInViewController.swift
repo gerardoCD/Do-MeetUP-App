@@ -53,7 +53,7 @@ class LogInViewController: UIViewController {
         
 
      
-        Auth.auth().signIn(withEmail: txtEmail.text, password: txtPassword.text) { (user, error) in
+        Auth.auth().signIn(withEmail: txtEmail.text!, password: txtPassword.text!) { (user, error) in
             if user != nil {
                 // Pasa ventana
                 //alerta "©
