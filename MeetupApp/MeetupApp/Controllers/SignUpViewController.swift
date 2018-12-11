@@ -27,6 +27,8 @@ class SignUpViewController: UIViewController {
         //Login button aspects
         signUpButton.layer.cornerRadius = 8.0
         signUpButton.layer.masksToBounds = true
+     //   signUpButton.alpha = 0.5
+     //   signUpButton.isEnabled = false
      //   signUpButton.isEnabled = false
      //   signUpButton.isOpaque = true
     }
@@ -49,12 +51,12 @@ class SignUpViewController: UIViewController {
     
     @IBAction func changeFiields(_ sender: UITextField) {
         if lblEmail.text != "" && lblPassword.text != "" && lblUserName.text != "" && lblConfirmPassword.text != ""{
-           // signUpButton.isEnabled = true
-          //  signUpButton.isOpaque = false
+         //   signUpButton.alpha = 1
+         //   signUpButton.isEnabled = true
             print("Hola")
         }else{
-          //  signUpButton.isEnabled = false
-          //  signUpButton.isOpaque = true
+         //   signUpButton.alpha = 0.5
+         //   signUpButton.isEnabled = false
             print("Hola2")
         }
     }
@@ -106,12 +108,11 @@ class SignUpViewController: UIViewController {
     func saveProfile(userName:String,userEmail:String, completion: @escaping ((_ success:Bool)->())) {
         guard let uid = Auth.auth().currentUser?.uid else { return }
   
-        let databaseRef = Database.database().reference().child("/")
+        let databaseRef = Database.database().reference().child("users/profile/\(uid)")
         
         let userObject = [
             "email": userEmail,
-            "username": userName
-          
+            "username": userName,
             ] as [String:Any]
         
         databaseRef.setValue(userObject) { error, ref in

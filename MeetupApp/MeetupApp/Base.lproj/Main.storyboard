@@ -42,6 +42,14 @@
                                     <segue destination="mjg-YP-xtH" kind="show" id="48X-gN-EoR"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zqo-av-fyZ">
+                                <rect key="frame" x="164" y="154" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <segue destination="FPT-HF-rEV" kind="show" id="dHo-cT-fLZ"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -62,7 +70,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="example@domain.com" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gnF-dX-QqN">
-                                <rect key="frame" x="16" y="153" width="336" height="30"/>
+                                <rect key="frame" x="16" y="197" width="336" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="336" id="9LO-6l-IKB"/>
                                     <constraint firstAttribute="height" constant="30" id="h4H-PH-sTe"/>
@@ -72,7 +80,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Write your password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7uQ-gb-rci">
-                                <rect key="frame" x="16" y="274" width="336" height="30"/>
+                                <rect key="frame" x="16" y="318" width="336" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="336" id="1dU-z0-Mfi"/>
                                     <constraint firstAttribute="height" constant="30" id="Ar0-LH-yOw"/>
@@ -82,7 +90,7 @@
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="EMAIL" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cFh-NE-ytd">
-                                <rect key="frame" x="16" y="124" width="48" height="21"/>
+                                <rect key="frame" x="16" y="168" width="48" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="SGU-hX-EDM"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="48" id="Vv8-Yx-ZsW"/>
@@ -91,7 +99,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PASSWORD" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="noD-wF-1jq">
-                                <rect key="frame" x="16" y="245" width="93" height="21"/>
+                                <rect key="frame" x="16" y="289" width="93" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="Dfv-RX-FUu"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="93" id="tZh-2O-sBv"/>
@@ -100,21 +108,21 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="launcher2" translatesAutoresizingMaskIntoConstraints="NO" id="kZB-nC-dZU">
-                                <rect key="frame" x="108" y="34" width="159" height="50"/>
+                                <rect key="frame" x="108" y="78" width="159" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="159" id="09N-EX-JN0"/>
                                     <constraint firstAttribute="height" constant="50" id="mEm-oZ-F6D"/>
                                 </constraints>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="peopleBack" translatesAutoresizingMaskIntoConstraints="NO" id="aGc-uo-17h">
-                                <rect key="frame" x="134" y="403" width="107" height="67"/>
+                                <rect key="frame" x="134" y="447" width="107" height="67"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="67" id="JMS-NV-ro0"/>
                                     <constraint firstAttribute="width" constant="107" id="uAz-1X-Pay"/>
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QUe-gH-Uge">
-                                <rect key="frame" x="143" y="355" width="89" height="30"/>
+                                <rect key="frame" x="143" y="399" width="89" height="30"/>
                                 <color key="backgroundColor" name="LaunchScreenColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="rNe-LW-RQa"/>
@@ -129,7 +137,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lbW-mc-hBJ">
-                                <rect key="frame" x="88" y="505" width="199" height="24"/>
+                                <rect key="frame" x="88" y="549" width="199" height="24"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="133" id="9MY-va-hvU"/>
                                     <constraint firstAttribute="height" constant="24" id="Sja-wd-vmR"/>
@@ -140,7 +148,7 @@
                                 </state>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q3C-VY-FqT">
-                                <rect key="frame" x="75.5" y="541" width="224" height="30"/>
+                                <rect key="frame" x="75.5" y="585" width="224" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="NC2-1t-1ks"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="146" id="Var-6L-14Y"/>
@@ -186,11 +194,13 @@
                         <outlet property="loginButton" destination="QUe-gH-Uge" id="4X6-9Z-Giu"/>
                         <outlet property="passwordLabel" destination="noD-wF-1jq" id="N5o-aM-0Yf"/>
                         <outlet property="peopleImage" destination="aGc-uo-17h" id="WVz-MI-R3V"/>
+                        <outlet property="txtEmail" destination="gnF-dX-QqN" id="ZbK-29-ZVn"/>
+                        <outlet property="txtPassword" destination="7uQ-gb-rci" id="egb-2d-qN9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WNy-c6-3Z8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3758" y="291"/>
+            <point key="canvasLocation" x="2905" y="-600"/>
         </scene>
         <!--Sign Up View Controller-->
         <scene sceneID="5NK-rE-OOg">
@@ -210,7 +220,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
-                                    <action selector="changeFiields:" destination="mjg-YP-xtH" eventType="editingChanged" id="KEX-Cc-h4C"/>
+                                    <action selector="changeFiields:" destination="mjg-YP-xtH" eventType="editingDidEnd" id="xCi-Jy-orp"/>
                                 </connections>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="exampleUser" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NyZ-bl-kqb">
@@ -223,7 +233,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
-                                    <action selector="changeFiields:" destination="mjg-YP-xtH" eventType="editingDidEnd" id="sql-do-7wD"/>
+                                    <action selector="changeFiields:" destination="mjg-YP-xtH" eventType="editingDidEnd" id="Rsk-vW-JFd"/>
                                 </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="USERNAME" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jHg-6Y-GA2">
@@ -246,7 +256,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                 <connections>
-                                    <action selector="changeFiields:" destination="mjg-YP-xtH" eventType="editingDidEnd" id="l5f-58-rzx"/>
+                                    <action selector="changeFiields:" destination="mjg-YP-xtH" eventType="editingDidEnd" id="dBq-76-7Jc"/>
                                 </connections>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Write your password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OG1-NJ-u60">
@@ -259,7 +269,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                 <connections>
-                                    <action selector="changeFiields:" destination="mjg-YP-xtH" eventType="editingDidEnd" id="joh-9m-fy5"/>
+                                    <action selector="changeFiields:" destination="mjg-YP-xtH" eventType="editingDidEnd" id="nrQ-Kx-4Bn"/>
                                 </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PASSWORD" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K4l-JE-hXe">

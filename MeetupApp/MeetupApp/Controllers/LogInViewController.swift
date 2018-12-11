@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import FirebaseAuth
     
     // A delay function
     func delay(_ seconds: Double, completion: @escaping ()->Void) {
@@ -20,7 +21,9 @@ class LogInViewController: UIViewController {
     @IBOutlet weak var passwordLabel: UILabel!
     @IBOutlet weak var peopleImage: UIImageView!
     @IBOutlet weak var loginButton: UIButton!
-
+    @IBOutlet weak var txtEmail: UITextField!
+    @IBOutlet weak var txtPassword: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -47,6 +50,20 @@ class LogInViewController: UIViewController {
         },
                        completion: nil
         )
+        
+
+     
+        Auth.auth().signIn(withEmail: txtEmail.text, password: txtPassword.text) { (user, error) in
+            if user != nil {
+                // Pasa ventana
+                //alerta "©
+              print("Ya esta loggeado")
+            
+            }else{
+                //alerta de errro
+                print("error")
+            }
+        }
         
        
     }
