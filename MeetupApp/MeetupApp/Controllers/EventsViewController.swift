@@ -83,6 +83,7 @@ class EventsViewController: UIViewController, UITableViewDelegate, UITableViewDa
                     eventlistaux.append(auxList)
                 }
                 UserDefaults.standard.set(eventlistaux, forKey: "Events")
+                self.tableView.reloadData()
                 
         })
         
@@ -94,7 +95,7 @@ class EventsViewController: UIViewController, UITableViewDelegate, UITableViewDa
             events.append(Event(name: eventOne[4], description: eventOne[1], photo: image!, place: eventOne[3], date: eventOne[0], cost: Double(eventOne[5])!))
             
         }
-        tableView.reloadData()
+       // tableView.reloadData()
         
         
     }
