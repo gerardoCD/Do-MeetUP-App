@@ -7,11 +7,13 @@
 //
 
 import UIKit
-
+import Firebase
+import FirebaseDatabase
 var myIndex = 0
 
 class EventsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
+    @IBOutlet weak var tableView: UITableView!
     var events = [Event]()
     
 
@@ -22,24 +24,79 @@ class EventsViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     //Datos hardcodeados para probar
     func loadEventInfo(){
-        let photoPrueba = UIImage(named: "prueba")
-        let photoPrueba2 = UIImage(named: "prueba2")
-        let photoPrueba3 = UIImage(named: "prueba3")
 
+         //                      let aux = Event()
+         //                    aux.name = eventName as! String
+         //                    aux.description = eventDescription as! String
+         //                    aux.date = eventDate as! String
+         //                    aux.cost = eventPrice as! Double
+         //                    aux.place = eventMapa as! String
+         //                    self.events.append(aux)
+
+         
+         
         
-        guard let event = Event(name: "Title", description: "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ", photo: photoPrueba!, place: "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu", date: "1/1/2018", cost: 37.50) else {
-            fatalError("Unable to instantiate event")
+      
+            var ref: DatabaseReference!
+            ref = Database.database().reference()
+            ref.child("events").observeSingleEvent(of: .value, with: { (snapshot) in
+            //let username = value?["username"] as? String ?? ""
+            //let user = User(username: username)
+//                for (_, valor) in value!{
+//                    let auxEvent = Event()
+//                    for(llave2, valor2) in valor as! NSDictionary{
+//                       // print(llave2)
+//                        if llave2 as! String == "Date"{
+//                            auxEvent.date = valor2 as! String
+//                        }else if llave2 as! String == "Description"{
+//                            auxEvent.description = valor2 as! String
+//                        }else if llave2 as! String == "Image"{
+//                           /* let url = URL(string: llave2 as! String)
+//                            let data = try? Data(contentsOf: url!)
+//                            auxEvent.photo = UIImage(data: data!)*/
+//                        }else if llave2 as! String == "Map"{
+//                            auxEvent.place = valor2 as! String
+//                        }else if llave2 as! String == "Name"{
+//                            auxEvent.name = valor2 as! String
+//                        }else if llave2 as! String == "Price"{
+//                            auxEvent.cost = valor2 as! Double
+//                        }
+//                         self.events.append(auxEvent)
+//                    }
+                var eventlistaux = [[String]]()
+                for event in snapshot.children.allObjects as! [DataSnapshot] {
+                    //getting values
+                    var auxList = [String]()
+                    let eventObject = event.value as? [String: AnyObject]
+                    let eventName  = eventObject?["Name"]
+                    let eventDescription  = eventObject?["Description"]
+                    let eventDate = eventObject?["Date"]
+                    let eventImage = eventObject?["Image"]
+                    let eventMapa = eventObject?["Map"]
+                    let eventPrice = eventObject?["Price"]
+                    auxList.append(eventDate as! String)
+                    auxList.append(eventDescription as! String)
+                    auxList.append(eventImage as! String)
+                    auxList.append(eventMapa as! String)
+                    auxList.append(eventName as! String)
+                    auxList.append(String(eventPrice as! Double))
+                    eventlistaux.append(auxList)
+                }
+                UserDefaults.standard.set(eventlistaux, forKey: "Events")
+                
+        })
+        
+        let eventArrayString = UserDefaults.standard.array(forKey: "Events")
+        for eventOne in eventArrayString as! [[String]]{
+            let url = URL(string: eventOne[2] )
+            let data = try? Data(contentsOf: url!)
+            let image  = UIImage(data: data!)
+            events.append(Event(name: eventOne[4], description: eventOne[1], photo: image!, place: eventOne[3], date: eventOne[0], cost: Double(eventOne[5])!))
+            
         }
+        tableView.reloadData()
         
-        guard let event2 = Event(name: "Title2", description: "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ", photo: photoPrueba2!, place: "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu", date: "6/6/2018", cost: 47.50) else {
-            fatalError("Unable to instantiate event2")
-        }
         
-        guard let event3 = Event(name: "Title3", description: "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ", photo: photoPrueba3!, place: "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu", date: "9/12/2018", cost: 0.0) else {
-            fatalError("Unable to instantiate event3")
-        }
-        
-        events += [event,event2,event3]
     }
 
     // MARK: - Table view data source

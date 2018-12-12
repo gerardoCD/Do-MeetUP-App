@@ -10,20 +10,14 @@ import Foundation
 import UIKit
 
 class Event {
-    var name: String
-    var description: String
-    var photo: UIImage?
-    var place: String
-    var date: String
-    var cost: Double
+    var name: String = ""
+    var description: String = ""
+    var photo: UIImage? = nil
+    var place: String = ""
+    var date: String = ""
+    var cost: Double = 0.0
     
-    init?(name: String, description: String, photo: UIImage, place: String, date: String, cost: Double) {
-        
-        // Initialization should fail if there is no name or if the rating is negative.
-        if name.isEmpty {
-            return nil
-        }
-        
+    init(name: String, description: String,photo:UIImage,place:String,date:String,cost:Double) {
         self.name = name
         self.description = description
         self.photo = photo
