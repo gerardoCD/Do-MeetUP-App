@@ -81,10 +81,11 @@ class EventsViewController: UIViewController, UITableViewDelegate, UITableViewDa
                     auxList.append(eventName as! String)
                     auxList.append(String(eventPrice as! Double))
                     eventlistaux.append(auxList)
+                    debugPrint(auxList)
                 }
                 UserDefaults.standard.set(eventlistaux, forKey: "Events")
-                self.tableView.reloadData()
-                
+                //self.tableView.reloadData()
+                debugPrint(eventlistaux)
         })
         
         let eventArrayString = UserDefaults.standard.array(forKey: "Events")
