@@ -88,7 +88,7 @@ class EventsViewController: UIViewController, UITableViewDelegate, UITableViewDa
                 debugPrint(eventlistaux)
         })
         
-        let eventArrayString = UserDefaults.standard.array(forKey: "Events")
+        guard let eventArrayString = UserDefaults.standard.array(forKey: "Events")else { return }
         for eventOne in eventArrayString as! [[String]]{
             let url = URL(string: eventOne[2] )
             let data = try? Data(contentsOf: url!)

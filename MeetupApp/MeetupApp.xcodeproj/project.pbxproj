@@ -11,14 +11,14 @@
 		5657163521B8D35D00702C77 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5657163421B8D35D00702C77 /* LogInViewController.swift */; };
 		5684576B21AC4DEA0048EA93 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5684576A21AC4DEA0048EA93 /* GoogleService-Info.plist */; };
 		56CE72F221AC3727009D4F75 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56CE72F121AC3727009D4F75 /* AppDelegate.swift */; };
-		56CE72F421AC3727009D4F75 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56CE72F321AC3727009D4F75 /* ViewController.swift */; };
 		56CE72F721AC3727009D4F75 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 56CE72F521AC3727009D4F75 /* Main.storyboard */; };
-		56CE72F921AC3729009D4F75 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 56CE72F821AC3729009D4F75 /* Assets.xcassets */; };
 		56CE72FC21AC3729009D4F75 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 56CE72FA21AC3729009D4F75 /* LaunchScreen.storyboard */; };
 		56CE730721AC3729009D4F75 /* MeetupAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56CE730621AC3729009D4F75 /* MeetupAppTests.swift */; };
 		56CE731221AC3729009D4F75 /* MeetupAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56CE731121AC3729009D4F75 /* MeetupAppUITests.swift */; };
 		571B9E4621BF00290070138C /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 571B9E4521BF00290070138C /* SignUpViewController.swift */; };
 		573C918321C165CB007449B2 /* EventDescriptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 573C918221C165CB007449B2 /* EventDescriptionViewController.swift */; };
+		5764F6BA21C9509400707A35 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5764F6B921C9509400707A35 /* MainViewController.swift */; };
+		5764F6BC21C97BCB00707A35 /* Assets 12-58-08-400.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5764F6BB21C97BCB00707A35 /* Assets 12-58-08-400.xcassets */; };
 		57B7CE2A21C0AD8200C95819 /* EventsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B7CE2921C0AD8200C95819 /* EventsTableViewCell.swift */; };
 		57B7CE2C21C0B57700C95819 /* EventsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B7CE2B21C0B57700C95819 /* EventsViewController.swift */; };
 		57B7CE3021C0B81A00C95819 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B7CE2F21C0B81A00C95819 /* Event.swift */; };
@@ -50,9 +50,7 @@
 		5684576A21AC4DEA0048EA93 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		56CE72EE21AC3727009D4F75 /* MeetupApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MeetupApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		56CE72F121AC3727009D4F75 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		56CE72F321AC3727009D4F75 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		56CE72F621AC3727009D4F75 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		56CE72F821AC3729009D4F75 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		56CE72FB21AC3729009D4F75 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		56CE72FD21AC3729009D4F75 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		56CE730221AC3729009D4F75 /* MeetupAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MeetupAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -63,6 +61,8 @@
 		56CE731321AC3729009D4F75 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		571B9E4521BF00290070138C /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		573C918221C165CB007449B2 /* EventDescriptionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDescriptionViewController.swift; sourceTree = "<group>"; };
+		5764F6B921C9509400707A35 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		5764F6BB21C97BCB00707A35 /* Assets 12-58-08-400.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = "Assets 12-58-08-400.xcassets"; path = "../../../../.Trash/Assets 12-58-08-400.xcassets"; sourceTree = "<group>"; };
 		57B7CE2921C0AD8200C95819 /* EventsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsTableViewCell.swift; sourceTree = "<group>"; };
 		57B7CE2B21C0B57700C95819 /* EventsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsViewController.swift; sourceTree = "<group>"; };
 		57B7CE2F21C0B81A00C95819 /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
@@ -116,11 +116,11 @@
 		5657163321B8D32B00702C77 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				56CE72F321AC3727009D4F75 /* ViewController.swift */,
 				5657163421B8D35D00702C77 /* LogInViewController.swift */,
 				571B9E4521BF00290070138C /* SignUpViewController.swift */,
 				57B7CE2B21C0B57700C95819 /* EventsViewController.swift */,
 				573C918221C165CB007449B2 /* EventDescriptionViewController.swift */,
+				5764F6B921C9509400707A35 /* MainViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -153,8 +153,8 @@
 				57B7CE2821C0AD7000C95819 /* Models */,
 				5657163321B8D32B00702C77 /* Controllers */,
 				56CE72F121AC3727009D4F75 /* AppDelegate.swift */,
+				5764F6BB21C97BCB00707A35 /* Assets 12-58-08-400.xcassets */,
 				56CE72F521AC3727009D4F75 /* Main.storyboard */,
-				56CE72F821AC3729009D4F75 /* Assets.xcassets */,
 				56CE72FA21AC3729009D4F75 /* LaunchScreen.storyboard */,
 				56CE72FD21AC3729009D4F75 /* Info.plist */,
 				5684576A21AC4DEA0048EA93 /* GoogleService-Info.plist */,
@@ -312,7 +312,7 @@
 			files = (
 				56CE72FC21AC3729009D4F75 /* LaunchScreen.storyboard in Resources */,
 				5684576B21AC4DEA0048EA93 /* GoogleService-Info.plist in Resources */,
-				56CE72F921AC3729009D4F75 /* Assets.xcassets in Resources */,
+				5764F6BC21C97BCB00707A35 /* Assets 12-58-08-400.xcassets in Resources */,
 				56CE72F721AC3727009D4F75 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -435,7 +435,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				56CE72F421AC3727009D4F75 /* ViewController.swift in Sources */,
 				56CE72F221AC3727009D4F75 /* AppDelegate.swift in Sources */,
 				57B7CE2C21C0B57700C95819 /* EventsViewController.swift in Sources */,
 				57B7CE2A21C0AD8200C95819 /* EventsTableViewCell.swift in Sources */,
@@ -443,6 +442,7 @@
 				5657163521B8D35D00702C77 /* LogInViewController.swift in Sources */,
 				57B7CE3021C0B81A00C95819 /* Event.swift in Sources */,
 				571B9E4621BF00290070138C /* SignUpViewController.swift in Sources */,
+				5764F6BA21C9509400707A35 /* MainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
