@@ -210,9 +210,12 @@
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="605-Vt-dLc">
                                                 <rect key="frame" x="168" y="886" width="182" height="43"/>
                                                 <color key="backgroundColor" name="LaunchScreenColor"/>
-                                                <state key="normal" title="Buy a ticket!">
+                                                <state key="normal" title="Buy tickets!">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="buyButtonTapped:" destination="9um-CL-rGE" eventType="touchUpInside" id="lMb-zQ-eZA"/>
+                                                </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tickets:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Umd-LJ-wVa">
                                                 <rect key="frame" x="9" y="871" width="65" height="21"/>
@@ -234,8 +237,12 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="HBN-vL-rQx">
+                                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="10" translatesAutoresizingMaskIntoConstraints="NO" id="HBN-vL-rQx">
                                                 <rect key="frame" x="8" y="900" width="118" height="30"/>
+                                                <color key="tintColor" name="Interfaces"/>
+                                                <connections>
+                                                    <action selector="sliderChanged:" destination="9um-CL-rGE" eventType="valueChanged" id="pxv-WD-lcX"/>
+                                                </connections>
                                             </slider>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -339,11 +346,14 @@
                     <size key="freeformSize" width="375" height="1008"/>
                     <connections>
                         <outlet property="buyButton" destination="605-Vt-dLc" id="eQo-WH-lr4"/>
-                        <outlet property="dateDescription" destination="VW4-nh-e3L" id="Brk-9v-cTg"/>
+                        <outlet property="dateDescription" destination="s1v-1V-Pe4" id="YL0-pj-G6u"/>
                         <outlet property="eventDescription" destination="l3Z-og-vYc" id="ysD-nX-48y"/>
                         <outlet property="eventTitleLabel" destination="FyL-AK-3Lv" id="Z8O-v9-EWt"/>
                         <outlet property="imageEvent" destination="O9W-kw-H0T" id="Xrx-vA-MHI"/>
-                        <outlet property="priceDescription" destination="s1v-1V-Pe4" id="g0F-fu-Sih"/>
+                        <outlet property="mapView" destination="4Kg-QE-MiF" id="wez-iU-098"/>
+                        <outlet property="numberTickets" destination="wEC-wP-vvr" id="iRB-lk-be6"/>
+                        <outlet property="priceDescription" destination="9d1-Td-r7v" id="AcY-2T-5dK"/>
+                        <outlet property="sliderBar" destination="HBN-vL-rQx" id="Oou-qJ-vwE"/>
                         <outlet property="whereDescription" destination="MDJ-Y0-O9N" id="LB3-1m-QEG"/>
                     </connections>
                 </viewController>
