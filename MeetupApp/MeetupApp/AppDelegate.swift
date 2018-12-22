@@ -14,11 +14,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     let blueSplash = UIColor(red: 0x09, green: 0x09, blue: 0x3B, alpha: 1)
     let screen = UIScreen.main.bounds
+    var event: Event?
+    var eve = EventsViewController()
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         FirebaseApp.configure()
         self.splashScreen()
+        eve.loadEventInfo()
         return true
     }
     

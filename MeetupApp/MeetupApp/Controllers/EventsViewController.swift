@@ -131,7 +131,7 @@ class EventsViewController: UIViewController, UITableViewDelegate, UITableViewDa
         cell.labelEventTitle.text = event.name
         cell.labelEventDescription.text = event.description
         cell.eventImage.image = event.photo
-
+        cell.accessoryType = .disclosureIndicator
         return cell
     }
     
