@@ -430,7 +430,7 @@
                                 <rect key="frame" x="337" y="87" width="22" height="22"/>
                                 <connections>
                                     <action selector="infoButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="81x-Do-H65"/>
-                                    <segue destination="Uts-k2-a4y" kind="show" id="j1o-3d-Icr"/>
+                                    <segue destination="g1P-kU-KVP" kind="show" id="MYV-Xp-r4d"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -616,68 +616,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WNy-c6-3Z8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2830" y="189"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="aI9-9O-Ddt">
-            <objects>
-                <viewController id="Uts-k2-a4y" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="iTv-pt-Mhd">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="launcher" translatesAutoresizingMaskIntoConstraints="NO" id="Ir0-kk-yFy">
-                                <rect key="frame" x="62" y="385" width="251" height="92"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="92" id="Igq-Kd-rE9"/>
-                                    <constraint firstAttribute="width" constant="251" id="rrG-ab-Cvz"/>
-                                </constraints>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="people" translatesAutoresizingMaskIntoConstraints="NO" id="EZe-Ye-hbs">
-                                <rect key="frame" x="115" y="289.5" width="145" height="88"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="145" id="UJu-AX-4Fh"/>
-                                    <constraint firstAttribute="height" constant="88" id="ya7-Xr-j7F"/>
-                                </constraints>
-                            </imageView>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" Copyright (c) 2018 MeetApp. All rights reserved." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="dAb-tD-2z6" userLabel="Copyright (c) 2015 Daiki Okumura. All rights reserved.">
-                                <rect key="frame" x="0.5" y="485" width="374" height="64"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="260" id="1up-HB-wa4"/>
-                                    <constraint firstAttribute="height" constant="64" id="WOI-Dd-0GO"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Version 1.0.0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UyC-Kk-iTq">
-                                <rect key="frame" x="85" y="260" width="205" height="21"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="205" id="U7A-oa-7tL"/>
-                                    <constraint firstAttribute="height" constant="21" id="eMP-4a-9hV"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
-                                <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" name="LaunchScreenColor"/>
-                        <constraints>
-                            <constraint firstItem="UyC-Kk-iTq" firstAttribute="top" secondItem="FxS-AC-w6D" secondAttribute="top" constant="196" id="ArL-e8-WdV"/>
-                            <constraint firstItem="EZe-Ye-hbs" firstAttribute="centerX" secondItem="iTv-pt-Mhd" secondAttribute="centerX" id="HBn-f0-zXD"/>
-                            <constraint firstItem="EZe-Ye-hbs" firstAttribute="top" secondItem="UyC-Kk-iTq" secondAttribute="bottom" constant="8.5" id="Jf6-i3-Sgd"/>
-                            <constraint firstItem="dAb-tD-2z6" firstAttribute="top" secondItem="Ir0-kk-yFy" secondAttribute="bottom" constant="8" id="K3F-Wb-3EW"/>
-                            <constraint firstItem="Ir0-kk-yFy" firstAttribute="centerX" secondItem="iTv-pt-Mhd" secondAttribute="centerX" id="K4U-Li-L5a"/>
-                            <constraint firstItem="dAb-tD-2z6" firstAttribute="centerX" secondItem="iTv-pt-Mhd" secondAttribute="centerX" id="Nl3-eA-ykB"/>
-                            <constraint firstItem="EZe-Ye-hbs" firstAttribute="centerY" secondItem="iTv-pt-Mhd" secondAttribute="centerY" id="ed2-Jt-qaT"/>
-                            <constraint firstItem="UyC-Kk-iTq" firstAttribute="centerX" secondItem="iTv-pt-Mhd" secondAttribute="centerX" id="poI-cM-nKU"/>
-                            <constraint firstItem="Ir0-kk-yFy" firstAttribute="top" secondItem="EZe-Ye-hbs" secondAttribute="bottom" constant="7.5" id="tD6-uk-yXs"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="FxS-AC-w6D"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="o7O-IW-U0K" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2829.5999999999999" y="917.99100449775119"/>
         </scene>
         <!--Sign Up View Controller-->
         <scene sceneID="5NK-rE-OOg">
@@ -879,6 +817,21 @@
             </objects>
             <point key="canvasLocation" x="1783" y="1901"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="OMu-h0-Sl1">
+            <objects>
+                <viewController id="g1P-kU-KVP" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="3rL-gR-uDD">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="9K2-EY-xq8"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VtZ-hB-C2X" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2830" y="929"/>
+        </scene>
         <!--Tckets-->
         <scene sceneID="2XY-jh-Zjd">
             <objects>
@@ -938,9 +891,7 @@
     </scenes>
     <resources>
         <image name="cloud" width="156" height="104.16000366210938"/>
-        <image name="launcher" width="355" height="123"/>
         <image name="launcher2" width="355" height="123"/>
-        <image name="people" width="700" height="700"/>
         <image name="peopleBack" width="700" height="512"/>
         <image name="prueba" width="528" height="349.32000732421875"/>
         <namedColor name="Interfaces">

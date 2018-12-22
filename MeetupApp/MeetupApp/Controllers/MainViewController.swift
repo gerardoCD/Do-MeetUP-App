@@ -72,4 +72,9 @@ class MainViewController: UIViewController {
         )
         
     }
+    
+    @IBAction func infoButtonTapped(_ sender: Any) {
+      
+    }
+    
 }
