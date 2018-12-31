@@ -76,22 +76,28 @@ class SignUpViewController: UIViewController {
         
         if lblPassword.text == lblConfirmPassword.text{
             Auth.auth().createUser(withEmail: lblEmail.text!, password: lblPassword.text!) { (authResult, error) in
-                guard (authResult?.user) != nil else { return }
-                let changeRequest = Auth.auth().currentUser?.createProfileChangeRequest()
-                changeRequest?.displayName = self.lblUserName.text
-                changeRequest?.commitChanges { error in
-                    if error == nil {
-                        //Alert
-                        saveProfile(userName: self.lblUserName.text!,userEmail:self.lblEmail.text!) { success in
-                            if success {
-                                let alert = UIAlertController(title: "Congratulations", message: "You are Singed", preferredStyle: .alert)
-                                alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: {(alert: UIAlertAction!) in  self.navigationController?.popToRootViewController(animated: true)}))
-                                self.present(alert, animated: true)
-                                
+                if error == nil {
+                    let changeRequest = Auth.auth().currentUser?.createProfileChangeRequest()
+                    changeRequest?.displayName = self.lblUserName.text
+                    changeRequest?.commitChanges { error in
+                        if error == nil {
+                            //Alert
+                            saveProfile(userName: self.lblUserName.text!,userEmail:self.lblEmail.text!) { success in
+                                if success {
+                                    let alert = UIAlertController(title: "Congratulations", message: "You are Singed", preferredStyle: .alert)
+                                    alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: {(alert: UIAlertAction!) in  self.navigationController?.popToRootViewController(animated: true)}))
+                                    self.present(alert, animated: true)
+                                    
+                                }
+
                             }
+                        } else {
+                            let alert = UIAlertController(title: "Error", message: "Your datas are incorrects", preferredStyle: .alert )
+                            alert.addAction(UIAlertAction(title: "Yes", style: .default, handler:nil))
+                            self.present(alert, animated: true)
                         }
                     }
-            }
+                } //"FIRAuthErrorDomain"
             
             
         }
