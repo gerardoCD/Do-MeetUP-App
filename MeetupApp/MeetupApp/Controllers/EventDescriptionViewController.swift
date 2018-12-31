@@ -27,15 +27,18 @@ class EventDescriptionViewController: UIViewController, UITextFieldDelegate, UII
 
     var event: Event?
     var eve = EventsViewController()
+    //Datos hardcodeados para probar ubicación
     let regionRadius: CLLocationDistance = 100
+    var country = "Mexico"
+    var city = "Ciudad de Mexico"
+    var street = "Fernando Iglesias Calderon"
+    lazy var geocoder = CLGeocoder()
+    
    
     override func viewDidLoad() {
         
         super.viewDidLoad()
         eve.loadEventInfo()
-        //Datos hardcodeados de localizacion de bellas artes
-        let initialLocation = CLLocation(latitude: 19.435639, longitude: -99.141278)
-        centerMapOnLocation(location: initialLocation)
         eventTitleLabel.text = eve.events[myIndex].name
         imageEvent.image = eve.events[myIndex].photo
         eventDescription.text = eve.events[myIndex].description
@@ -46,13 +49,42 @@ class EventDescriptionViewController: UIViewController, UITextFieldDelegate, UII
         //Login button aspects
         buyButton.layer.cornerRadius = 8.0
         buyButton.layer.masksToBounds = true
+        
+        // Geocode Address String
+        let address = "\(country), \(city), \(street)"
+        geocoder.geocodeAddressString(address) { (placemarks, error) in
+            // Process Response
+            self.processResponse(withPlacemarks: placemarks, error: error)
+        }
+
     }
     
-    func centerMapOnLocation(location: CLLocation) {
-        let coordinateRegion = MKCoordinateRegion(center: location.coordinate,
-                                                  latitudinalMeters: regionRadius, longitudinalMeters: regionRadius)
-        mapView.setRegion(coordinateRegion, animated: true)
+    func processResponse(withPlacemarks placemarks: [CLPlacemark]?, error: Error?) {
+        
+        if let error = error {
+            print("Unable to Forward Geocode Address (\(error))")
+            
+        } else {
+            var location: CLLocation?
+            
+            if let placemarks = placemarks, placemarks.count > 0 {
+                location = placemarks.first?.location
+            }
+            
+            if let location = location {
+                let coordinate = location.coordinate
+                print(coordinate.latitude)
+                print(coordinate.longitude)
+                let coordinateRegion = MKCoordinateRegion(center: location.coordinate,
+                                                          latitudinalMeters: regionRadius, longitudinalMeters: regionRadius)
+                mapView.setRegion(coordinateRegion, animated: true)
+                mapView.setRegion(coordinateRegion, animated: true)
+            } else {
+                print("No Matching Location Found")
+            }
+        }
     }
+    
     
     @IBAction func sliderChanged(_ sender: UISlider) {
         let currentValue = Int(sender.value)
