@@ -57,16 +57,27 @@ class LogInViewController: UIViewController {
             if user != nil {
                 // Pasa ventana
                 //alerta "©
-              print("Ya esta loggeado")
+                let alert = UIAlertController(title: "Congratulations", message: "You are logged", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: {(alert: UIAlertAction!) in  self.navigationController?.popToRootViewController(animated: true)}))
+                self.present(alert, animated: true)
+                
             
             }else{
                 //alerta de errro
                 print("error")
+                let alert = UIAlertController(title: "Error", message: "Your email or password are worng \n Try Again", preferredStyle: .alert )
+                alert.addAction(UIAlertAction(title: "Yes", style: .default, handler:nil))
+                self.present(alert, animated: true)
+              
+
+                
             }
         }
         
        
     }
+    
+    
     
 
 
