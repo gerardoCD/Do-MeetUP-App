@@ -24,19 +24,6 @@ class EventsViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     //Datos hardcodeados para probar
     func loadEventInfo(){
-
-         //                      let aux = Event()
-         //                    aux.name = eventName as! String
-         //                    aux.description = eventDescription as! String
-         //                    aux.date = eventDate as! String
-         //                    aux.cost = eventPrice as! Double
-         //                    aux.place = eventMapa as! String
-         //                    self.events.append(aux)
-
-         
-         
-        
-      
             var ref: DatabaseReference!
             ref = Database.database().reference()
             ref.child("events").observeSingleEvent(of: .value, with: { (snapshot) in
@@ -133,6 +120,21 @@ class EventsViewController: UIViewController, UITableViewDelegate, UITableViewDa
         cell.eventImage.image = event.photo
         cell.accessoryType = .disclosureIndicator
         return cell
+    }
+    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+        let calendar = UITableViewRowAction(style: .normal, title: "Calendar") { action, index in
+            print("more button tapped")
+        }
+        calendar.backgroundColor = .lightGray
+        
+        let share = UITableViewRowAction(style: .normal, title: "Share") { action, index in
+            let activityController = UIActivityViewController(activityItems: [self.events[indexPath.row].name,self.events[indexPath.row].description,self.events[indexPath.row].photo!],
+                                                              applicationActivities: nil)
+            self.present(activityController, animated: true, completion: nil)
+        }
+        share.backgroundColor = .blue
+        
+        return [share, calendar]
     }
     
 
