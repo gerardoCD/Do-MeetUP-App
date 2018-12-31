@@ -8,6 +8,7 @@
 
 import UIKit
 import MapKit
+import Firebase
 
 class EventDescriptionViewController: UIViewController, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
@@ -100,6 +101,12 @@ class EventDescriptionViewController: UIViewController, UITextFieldDelegate, UII
                         self.buyButton.transform = CGAffineTransform.init(scaleX: 1.0, y: 1.0)
         },
                        completion: nil)
+        if Auth.auth().currentUser != nil {
+            // User is signed in.
+            // ...
+        } else {
+            performSegue(withIdentifier: "segueFromBuyToLogin" , sender: nil)
+        }
     }
     
     

@@ -355,6 +355,7 @@
                         <outlet property="priceDescription" destination="9d1-Td-r7v" id="AcY-2T-5dK"/>
                         <outlet property="sliderBar" destination="HBN-vL-rQx" id="Oou-qJ-vwE"/>
                         <outlet property="whereDescription" destination="MDJ-Y0-O9N" id="LB3-1m-QEG"/>
+                        <segue destination="FPT-HF-rEV" kind="show" identifier="segueFromBuyToLogin" id="EfR-pf-EFZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YiM-4o-toX" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -950,4 +951,7 @@
             <color red="0.035294117647058823" green="0.035294117647058823" blue="0.23137254901960785" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="EfR-pf-EFZ"/>
+    </inferredMetricsTieBreakers>
 </document>
