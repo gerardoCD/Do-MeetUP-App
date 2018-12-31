@@ -76,6 +76,8 @@ class SignUpViewController: UIViewController {
         
         if lblPassword.text == lblConfirmPassword.text{
             Auth.auth().createUser(withEmail: lblEmail.text!, password: lblPassword.text!) { (authResult, error) in
+                
+                
                 if error == nil {
                     let changeRequest = Auth.auth().currentUser?.createProfileChangeRequest()
                     changeRequest?.displayName = self.lblUserName.text
@@ -97,7 +99,30 @@ class SignUpViewController: UIViewController {
                             self.present(alert, animated: true)
                         }
                     }
-                } //"FIRAuthErrorDomain"
+                } else {
+                    if let errCode = AuthErrorCode(rawValue: error!._code) {
+                        switch errCode {
+                        case .emailAlreadyInUse:
+                            print("")
+                        case .invalidEmail:
+                            print("")
+                        case .userDisabled:
+                            print("")
+                        case .wrongPassword:
+                            print("")
+                        case .weakPassword:
+                            print("")
+                        case .userNotFound:
+                            print("")
+                        case .networkError:
+                            print("")
+                        default:
+                            print("Create User Error: \(String(describing: error))")
+                        }
+                    }
+                    
+                }
+                
             
             
         }
@@ -123,4 +148,7 @@ class SignUpViewController: UIViewController {
     
 
 }
+    
+    
+    
 }
