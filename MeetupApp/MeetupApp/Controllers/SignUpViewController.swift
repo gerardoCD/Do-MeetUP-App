@@ -74,8 +74,7 @@ class SignUpViewController: UIViewController {
                        completion: nil
         )
         
-        if lblPassword.text ==
-            lblConfirmPassword.text{
+        if lblPassword.text == lblConfirmPassword.text{
             Auth.auth().createUser(withEmail: lblEmail.text!, password: lblPassword.text!) { (authResult, error) in
                 guard (authResult?.user) != nil else { return }
                 let changeRequest = Auth.auth().currentUser?.createProfileChangeRequest()
@@ -83,20 +82,15 @@ class SignUpViewController: UIViewController {
                 changeRequest?.commitChanges { error in
                     if error == nil {
                         //Alert
-                        print("User display name changed!")
                         saveProfile(userName: self.lblUserName.text!,userEmail:self.lblEmail.text!) { success in
                             if success {
-                                self.dismiss(animated: true, completion: nil)
+                                let alert = UIAlertController(title: "Congratulations", message: "You are Singed", preferredStyle: .alert)
+                                alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: {(alert: UIAlertAction!) in  self.navigationController?.popToRootViewController(animated: true)}))
+                                self.present(alert, animated: true)
+                                
                             }
                         }
                     }
-                    
-                
-                //Alert
-                self.lblEmail.text = ""
-                self.lblUserName.text = ""
-                self.lblPassword.text = ""
-                self.lblConfirmPassword.text = ""
             }
             
             
@@ -116,7 +110,7 @@ class SignUpViewController: UIViewController {
             ] as [String:Any]
         
         databaseRef.setValue(userObject) { error, ref in
-            completion(error == nil)
+        completion(error == nil)
         }
     }
 
