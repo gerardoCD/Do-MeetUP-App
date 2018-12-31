@@ -9,6 +9,7 @@
 import UIKit
 import Firebase
 import FirebaseDatabase
+import EventKit
 var myIndex = 0
 
 class EventsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
@@ -123,7 +124,36 @@ class EventsViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
         let calendar = UITableViewRowAction(style: .normal, title: "Calendar") { action, index in
-            print("more button tapped")
+            let eventStore = EKEventStore()
+            eventStore.requestAccess(to: .event, completion: { (succes, error) in
+                if error == nil{
+                    let event = EKEvent(eventStore: eventStore)
+                    print( self.events[indexPath.row].name)
+                    event.title = self.events[indexPath.row].name
+                    event.startDate = Date()
+                    event.endDate = Date()
+                    event.notes = self.events[indexPath.row].description
+                    event.calendar = eventStore.defaultCalendarForNewEvents
+                    do {
+                        try eventStore.save(event, span: .thisEvent)
+                        let alert = UIAlertController(title: "Congratulations", message: "Your event is saved \n check it on your calendar", preferredStyle: .alert)
+                        alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: {(alert: UIAlertAction!) in  self.navigationController?.popToRootViewController(animated: true)}))
+                        self.present(alert, animated: true)
+                        
+                    }catch let error as NSError{
+                        print(error)
+                        let alert = UIAlertController(title: "Error", message: "Your event could not add the calendar ", preferredStyle: .alert )
+                        alert.addAction(UIAlertAction(title: "Yes", style: .default, handler:nil))
+                        self.present(alert, animated: true)
+                    }
+                }else{
+                    let alert = UIAlertController(title: "Error", message: "You have not access the calendar", preferredStyle: .alert )
+                    alert.addAction(UIAlertAction(title: "Yes", style: .default, handler:nil))
+                    self.present(alert, animated: true)
+                    
+                }
+                
+            })
         }
         calendar.backgroundColor = .lightGray
         
