@@ -129,11 +129,13 @@ class EventsViewController: UIViewController, UITableViewDelegate, UITableViewDa
                 if error == nil{
                     let event = EKEvent(eventStore: eventStore)
                     print( self.events[indexPath.row].name)
-                    event.title = self.events[indexPath.row].name
+                    event.title = "\(self.events[indexPath.row].name)"
+                    event.location = "\(self.events[indexPath.row].place)"
                     event.startDate = Date()
                     event.endDate = Date()
-                    event.notes = self.events[indexPath.row].description
+                    event.notes = "\(self.events[indexPath.row].description)"
                     event.calendar = eventStore.defaultCalendarForNewEvents
+                    print(event.description)
                     do {
                         try eventStore.save(event, span: .thisEvent)
                         let alert = UIAlertController(title: "Congratulations", message: "Your event is saved \n check it on your calendar", preferredStyle: .alert)
