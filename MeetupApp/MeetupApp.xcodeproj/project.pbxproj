@@ -24,6 +24,7 @@
 		57F9E22621D9B0CB009C9568 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 57F9E22521D9B0CB009C9568 /* Assets.xcassets */; };
 		773316EE157673AD3E15C606 /* Pods_MeetupAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DEADD27C06B2CD8E2C24EEF /* Pods_MeetupAppUITests.framework */; };
 		BD6C7674A3596A60431192CC /* Pods_MeetupApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C99168B739DA94631271066 /* Pods_MeetupApp.framework */; };
+		C10AB4EE21DA87800078C187 /* CodigoQR.swift in Sources */ = {isa = PBXBuildFile; fileRef = C10AB4ED21DA87800078C187 /* CodigoQR.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +73,7 @@
 		8DEADD27C06B2CD8E2C24EEF /* Pods_MeetupAppUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MeetupAppUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A687D5378255DBD054EE0423 /* Pods-MeetupAppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MeetupAppUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MeetupAppUITests/Pods-MeetupAppUITests.release.xcconfig"; sourceTree = "<group>"; };
 		B395F0A299188E15ADD498C3 /* Pods-MeetupAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MeetupAppTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MeetupAppTests/Pods-MeetupAppTests.release.xcconfig"; sourceTree = "<group>"; };
+		C10AB4ED21DA87800078C187 /* CodigoQR.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodigoQR.swift; sourceTree = "<group>"; };
 		D960C6737EDC0FB2935B54F4 /* Pods-MeetupAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MeetupAppTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MeetupAppTests/Pods-MeetupAppTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -185,6 +187,7 @@
 			children = (
 				57B7CE2921C0AD8200C95819 /* EventsTableViewCell.swift */,
 				57B7CE2F21C0B81A00C95819 /* Event.swift */,
+				C10AB4ED21DA87800078C187 /* CodigoQR.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -440,6 +443,7 @@
 				57B7CE2A21C0AD8200C95819 /* EventsTableViewCell.swift in Sources */,
 				573C918321C165CB007449B2 /* EventDescriptionViewController.swift in Sources */,
 				5657163521B8D35D00702C77 /* LogInViewController.swift in Sources */,
+				C10AB4EE21DA87800078C187 /* CodigoQR.swift in Sources */,
 				57B7CE3021C0B81A00C95819 /* Event.swift in Sources */,
 				571B9E4621BF00290070138C /* SignUpViewController.swift in Sources */,
 				5764F6BA21C9509400707A35 /* MainViewController.swift in Sources */,
