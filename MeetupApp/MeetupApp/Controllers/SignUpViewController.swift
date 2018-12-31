@@ -76,8 +76,6 @@ class SignUpViewController: UIViewController {
         
         if lblPassword.text == lblConfirmPassword.text{
             Auth.auth().createUser(withEmail: lblEmail.text!, password: lblPassword.text!) { (authResult, error) in
-                
-                
                 if error == nil {
                     let changeRequest = Auth.auth().currentUser?.createProfileChangeRequest()
                     changeRequest?.displayName = self.lblUserName.text
@@ -103,21 +101,37 @@ class SignUpViewController: UIViewController {
                     if let errCode = AuthErrorCode(rawValue: error!._code) {
                         switch errCode {
                         case .emailAlreadyInUse:
-                            print("")
+                            let alert = UIAlertController(title: "Error", message: "Your email is In Use", preferredStyle: .alert )
+                            alert.addAction(UIAlertAction(title: "Yes", style: .default, handler:nil))
+                            self.present(alert, animated: true)
                         case .invalidEmail:
-                            print("")
+                            let alert = UIAlertController(title: "Error", message: "Your format email is incorrect", preferredStyle: .alert )
+                            alert.addAction(UIAlertAction(title: "Yes", style: .default, handler:nil))
+                            self.present(alert, animated: true)
                         case .userDisabled:
-                            print("")
+                            let alert = UIAlertController(title: "Error", message: "Your user has been disable \n Try contact us", preferredStyle: .alert )
+                            alert.addAction(UIAlertAction(title: "Yes", style: .default, handler:nil))
+                            self.present(alert, animated: true)
                         case .wrongPassword:
-                            print("")
+                            let alert = UIAlertController(title: "Error", message: "Your datas are incorrects", preferredStyle: .alert )
+                            alert.addAction(UIAlertAction(title: "Yes", style: .default, handler:nil))
+                            self.present(alert, animated: true)
                         case .weakPassword:
-                            print("")
+                            let alert = UIAlertController(title: "Error", message: "Your datas are incorrects", preferredStyle: .alert )
+                            alert.addAction(UIAlertAction(title: "Yes", style: .default, handler:nil))
+                            self.present(alert, animated: true)
                         case .userNotFound:
-                            print("")
+                            let alert = UIAlertController(title: "Error", message: "Your datas are incorrects", preferredStyle: .alert )
+                            alert.addAction(UIAlertAction(title: "Yes", style: .default, handler:nil))
+                            self.present(alert, animated: true)
                         case .networkError:
-                            print("")
+                            let alert = UIAlertController(title: "Error", message: "You are not connect on Internet", preferredStyle: .alert )
+                            alert.addAction(UIAlertAction(title: "Yes", style: .default, handler:nil))
+                            self.present(alert, animated: true)
                         default:
-                            print("Create User Error: \(String(describing: error))")
+                            let alert = UIAlertController(title: "Error", message: "You have a error \n Try Try contact us", preferredStyle: .alert )
+                            alert.addAction(UIAlertAction(title: "Yes", style: .default, handler:nil))
+                            self.present(alert, animated: true)
                         }
                     }
                     
@@ -128,7 +142,11 @@ class SignUpViewController: UIViewController {
         }
         
         
-    }
+        }else{
+            let alert = UIAlertController(title: "Error", message: "Your passwords are not equals", preferredStyle: .alert )
+            alert.addAction(UIAlertAction(title: "Yes", style: .default, handler:nil))
+            self.present(alert, animated: true)
+        }
     
     func saveProfile(userName:String,userEmail:String, completion: @escaping ((_ success:Bool)->())) {
         guard let uid = Auth.auth().currentUser?.uid else { return }
