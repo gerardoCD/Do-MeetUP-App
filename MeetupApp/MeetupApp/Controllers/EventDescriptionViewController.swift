@@ -103,7 +103,6 @@ class EventDescriptionViewController: UIViewController, UITextFieldDelegate, UII
                        completion: nil)
         if Auth.auth().currentUser != nil {
             // User is signed in.
-            // ...
         } else {
             performSegue(withIdentifier: "segueFromBuyToLogin" , sender: nil)
         }
