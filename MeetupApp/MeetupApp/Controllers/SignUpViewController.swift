@@ -27,10 +27,8 @@ class SignUpViewController: UIViewController {
         //Login button aspects
         signUpButton.layer.cornerRadius = 8.0
         signUpButton.layer.masksToBounds = true
-     //   signUpButton.alpha = 0.5
-     //   signUpButton.isEnabled = false
-     //   signUpButton.isEnabled = false
-     //   signUpButton.isOpaque = true
+        signUpButton.isUserInteractionEnabled = false
+        signUpButton.alpha = 0.5
     }
     
     //Settings after the view appears
@@ -48,20 +46,57 @@ class SignUpViewController: UIViewController {
         )
     }
     
+    //Button's Behaviour
     
-    @IBAction func changeFiields(_ sender: UITextField) {
-        if lblEmail.text != "" && lblPassword.text != "" && lblUserName.text != "" && lblConfirmPassword.text != ""{
-         //   signUpButton.alpha = 1
-         //   signUpButton.isEnabled = true
-            print("Hola")
-        }else{
-         //   signUpButton.alpha = 0.5
-         //   signUpButton.isEnabled = false
-            print("Hola2")
+    @IBAction func emailChanged(_ sender: UITextField) {
+        if(lblUserName.text?.isEmpty == false) && (lblPassword.text?.isEmpty == false) && (lblConfirmPassword.text?.isEmpty == false){
+            if sender.text?.isEmpty == true{
+                buttonDisabled()
+            }else{
+                buttonEnabled()
+            }
         }
     }
     
+    @IBAction func usernameChanged(_ sender: UITextField) {
+        if(lblEmail.text?.isEmpty == false) && (lblPassword.text?.isEmpty == false) && (lblConfirmPassword.text?.isEmpty == false){
+            if sender.text?.isEmpty == true{
+                buttonDisabled()
+            }else{
+                buttonEnabled()
+            }
+        }
+    }
     
+    @IBAction func passwordChanged(_ sender: UITextField) {
+        if(lblEmail.text?.isEmpty == false) && (lblUserName.text?.isEmpty == false) && (lblConfirmPassword.text?.isEmpty == false){
+            if sender.text?.isEmpty == true{
+                buttonDisabled()
+            }else{
+                buttonEnabled()
+            }
+        }
+    }
+    
+    @IBAction func confirmationChanged(_ sender: UITextField) {
+        if(lblEmail.text?.isEmpty == false) && (lblUserName.text?.isEmpty == false) && (lblPassword.text?.isEmpty == false){
+            if sender.text?.isEmpty == true{
+                buttonDisabled()
+            }else{
+                buttonEnabled()
+            }
+        }
+    }
+    
+    func buttonDisabled(){
+        signUpButton.isUserInteractionEnabled = false
+        signUpButton.alpha = 0.5
+    }
+    
+    func buttonEnabled(){
+        signUpButton.isUserInteractionEnabled = true
+        signUpButton.alpha = 1.0
+    }
     
 
     @IBAction func signUpButtonTapped(_ sender: Any) {

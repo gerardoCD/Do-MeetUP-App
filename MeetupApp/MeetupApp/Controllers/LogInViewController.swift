@@ -30,6 +30,8 @@ class LogInViewController: UIViewController {
         //Login button aspects
         loginButton.layer.cornerRadius = 8.0
         loginButton.layer.masksToBounds = true
+        loginButton.isUserInteractionEnabled = false
+        loginButton.alpha = 0.5
     }
     
     //Settings after the view appears
@@ -41,6 +43,37 @@ class LogInViewController: UIViewController {
         }
     }
     
+    @IBAction func emailChanged(_ sender: UITextField) {
+        if(txtPassword.text?.isEmpty == false){
+            if sender.text?.isEmpty == true{
+                buttonDisabled()
+            }else{
+                buttonEnabled()
+            }
+        }
+    }
+    
+    @IBAction func passwordChanged(_ sender: UITextField) {
+        if(txtEmail.text?.isEmpty == false){
+            if sender.text?.isEmpty == true{
+                buttonDisabled()
+            }else{
+                buttonEnabled()
+            }
+        }
+    }
+    
+    func buttonDisabled(){
+        loginButton.isUserInteractionEnabled = false
+        loginButton.alpha = 0.5
+    }
+    
+    func buttonEnabled(){
+        loginButton.isUserInteractionEnabled = true
+        loginButton.alpha = 1.0
+    }
+    
+    
     //The button was tapped 
     @IBAction func signInTapped(_ sender: Any) {
         UIView.animate(withDuration: 0.5, delay: 0.3, options: [.curveEaseInOut, .autoreverse], animations:{
@@ -51,8 +84,7 @@ class LogInViewController: UIViewController {
                        completion: nil
         )
         
-
-     
+        
         Auth.auth().signIn(withEmail: txtEmail.text!, password: txtPassword.text!) { (user, error) in
             if user != nil {
                 // Pasa ventana
