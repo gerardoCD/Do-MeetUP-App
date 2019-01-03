@@ -29,7 +29,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="89.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="prueba" translatesAutoresizingMaskIntoConstraints="NO" id="iDh-pI-UfP">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="iDh-pI-UfP">
                                                     <rect key="frame" x="0.0" y="0.0" width="115" height="90"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="115" id="AKm-g4-jHo"/>
@@ -385,7 +385,7 @@
                                     <constraint firstAttribute="width" constant="144" id="Skm-53-CFU"/>
                                 </constraints>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="prueba" translatesAutoresizingMaskIntoConstraints="NO" id="Hdg-hY-5NY">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Hdg-hY-5NY">
                                 <rect key="frame" x="16" y="140" width="343" height="223"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="343" id="TWU-Br-KiW"/>
@@ -875,18 +875,27 @@
         <!--Create-->
         <scene sceneID="lse-BR-ld9">
             <objects>
-                <viewController id="ubV-M9-bKn" sceneMemberID="viewController">
+                <viewController id="ubV-M9-bKn" customClass="CreateEventViewController" customModule="MeetupApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="tfG-Ap-RQQ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Create" translatesAutoresizingMaskIntoConstraints="NO" id="mBM-Ci-Tg3">
+                                <rect key="frame" x="62" y="49" width="251" height="108"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="ycx-SS-aeD"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Create" id="joe-MJ-0PO"/>
+                    <connections>
+                        <outlet property="headImage" destination="mBM-Ci-Tg3" id="2JZ-ny-zhh"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2to-bn-D2P" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1783" y="1901"/>
+            <point key="canvasLocation" x="2053.5999999999999" y="1820.2398800599701"/>
         </scene>
         <!--Tckets-->
         <scene sceneID="2XY-jh-Zjd">
@@ -902,7 +911,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="A9z-9j-n3t" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="558" y="2027"/>
+            <point key="canvasLocation" x="753" y="1960"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="USh-9V-8f5">
@@ -946,12 +955,12 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Create" width="696" height="160"/>
         <image name="cloud" width="156" height="104.16000366210938"/>
         <image name="launcher" width="355" height="123"/>
         <image name="launcher2" width="355" height="123"/>
         <image name="people" width="700" height="700"/>
         <image name="peopleBack" width="700" height="512"/>
-        <image name="prueba" width="528" height="349.32000732421875"/>
         <namedColor name="Interfaces">
             <color red="0.33725490196078434" green="0.33725490196078434" blue="0.58431372549019611" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

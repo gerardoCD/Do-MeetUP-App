@@ -21,6 +21,7 @@
 		57B7CE2A21C0AD8200C95819 /* EventsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B7CE2921C0AD8200C95819 /* EventsTableViewCell.swift */; };
 		57B7CE2C21C0B57700C95819 /* EventsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B7CE2B21C0B57700C95819 /* EventsViewController.swift */; };
 		57B7CE3021C0B81A00C95819 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B7CE2F21C0B81A00C95819 /* Event.swift */; };
+		57C81AA421DE7C31007CAE14 /* CreateEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C81AA321DE7C31007CAE14 /* CreateEventViewController.swift */; };
 		57F9E22621D9B0CB009C9568 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 57F9E22521D9B0CB009C9568 /* Assets.xcassets */; };
 		773316EE157673AD3E15C606 /* Pods_MeetupAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DEADD27C06B2CD8E2C24EEF /* Pods_MeetupAppUITests.framework */; };
 		BD6C7674A3596A60431192CC /* Pods_MeetupApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C99168B739DA94631271066 /* Pods_MeetupApp.framework */; };
@@ -66,6 +67,7 @@
 		57B7CE2921C0AD8200C95819 /* EventsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsTableViewCell.swift; sourceTree = "<group>"; };
 		57B7CE2B21C0B57700C95819 /* EventsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsViewController.swift; sourceTree = "<group>"; };
 		57B7CE2F21C0B81A00C95819 /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
+		57C81AA321DE7C31007CAE14 /* CreateEventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateEventViewController.swift; sourceTree = "<group>"; };
 		57F9E22521D9B0CB009C9568 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		58D8E47B99A0929C27EEBF41 /* Pods-MeetupAppUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MeetupAppUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MeetupAppUITests/Pods-MeetupAppUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		7D2E7669B93645DF91792340 /* Pods_MeetupAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MeetupAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -123,6 +125,7 @@
 				57B7CE2B21C0B57700C95819 /* EventsViewController.swift */,
 				573C918221C165CB007449B2 /* EventDescriptionViewController.swift */,
 				5764F6B921C9509400707A35 /* MainViewController.swift */,
+				57C81AA321DE7C31007CAE14 /* CreateEventViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -445,6 +448,7 @@
 				5657163521B8D35D00702C77 /* LogInViewController.swift in Sources */,
 				C10AB4EE21DA87800078C187 /* CodigoQR.swift in Sources */,
 				57B7CE3021C0B81A00C95819 /* Event.swift in Sources */,
+				57C81AA421DE7C31007CAE14 /* CreateEventViewController.swift in Sources */,
 				571B9E4621BF00290070138C /* SignUpViewController.swift in Sources */,
 				5764F6BA21C9509400707A35 /* MainViewController.swift in Sources */,
 			);
