@@ -17,6 +17,7 @@
 		56CE731221AC3729009D4F75 /* MeetupAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56CE731121AC3729009D4F75 /* MeetupAppUITests.swift */; };
 		571B9E4621BF00290070138C /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 571B9E4521BF00290070138C /* SignUpViewController.swift */; };
 		573C918321C165CB007449B2 /* EventDescriptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 573C918221C165CB007449B2 /* EventDescriptionViewController.swift */; };
+		575DFE4521E0052F007822E4 /* TicketTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 575DFE4421E0052F007822E4 /* TicketTableViewCell.swift */; };
 		5764F6BA21C9509400707A35 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5764F6B921C9509400707A35 /* MainViewController.swift */; };
 		57B7CE2A21C0AD8200C95819 /* EventsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B7CE2921C0AD8200C95819 /* EventsTableViewCell.swift */; };
 		57B7CE2C21C0B57700C95819 /* EventsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B7CE2B21C0B57700C95819 /* EventsViewController.swift */; };
@@ -65,6 +66,7 @@
 		56CE731321AC3729009D4F75 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		571B9E4521BF00290070138C /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		573C918221C165CB007449B2 /* EventDescriptionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDescriptionViewController.swift; sourceTree = "<group>"; };
+		575DFE4421E0052F007822E4 /* TicketTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketTableViewCell.swift; sourceTree = "<group>"; };
 		5764F6B921C9509400707A35 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		57B7CE2921C0AD8200C95819 /* EventsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsTableViewCell.swift; sourceTree = "<group>"; };
 		57B7CE2B21C0B57700C95819 /* EventsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsViewController.swift; sourceTree = "<group>"; };
@@ -197,6 +199,7 @@
 				57B7CE2921C0AD8200C95819 /* EventsTableViewCell.swift */,
 				57B7CE2F21C0B81A00C95819 /* Event.swift */,
 				C10AB4ED21DA87800078C187 /* CodigoQR.swift */,
+				575DFE4421E0052F007822E4 /* TicketTableViewCell.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -467,6 +470,7 @@
 				57C81AA421DE7C31007CAE14 /* CreateEventViewController.swift in Sources */,
 				571B9E4621BF00290070138C /* SignUpViewController.swift in Sources */,
 				5764F6BA21C9509400707A35 /* MainViewController.swift in Sources */,
+				575DFE4521E0052F007822E4 /* TicketTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
