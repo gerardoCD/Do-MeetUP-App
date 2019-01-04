@@ -32,7 +32,7 @@ class EventDescriptionViewController: UIViewController, UITextFieldDelegate, UII
     let regionRadius: CLLocationDistance = 100
     var country = "Mexico"
     var city = "Ciudad de Mexico"
-    var street = "Insurgentes Sur 3000"
+    var street = "Calle Francisco I. Madero 17"
     lazy var geocoder = CLGeocoder()
     
    

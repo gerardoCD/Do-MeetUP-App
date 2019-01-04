@@ -10,24 +10,15 @@ import UIKit
 
 class CreateEventViewController: UIViewController {
     
-    // A delay function
-    func delay(_ seconds: Double, completion: @escaping ()->Void) {
-        DispatchQueue.main.asyncAfter(deadline: .now() + seconds, execute: completion)
-    }
     
-    @IBOutlet weak var headImage: UIImageView!
+    @IBOutlet weak var createButton: UIButton!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        self.headImage.center.x -= self.view.bounds.width
+        createButton.layer.cornerRadius = 8.0
+        createButton.layer.masksToBounds = true
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        UIView.animate(withDuration: 2.0){
-            self.headImage.center.x =  +self.headImage.bounds.width/1.65
-        }
-    }
-
+    
 }
