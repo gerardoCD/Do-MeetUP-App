@@ -24,6 +24,7 @@ class SignUpViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
         //Login button aspects
         signUpButton.layer.cornerRadius = 8.0
         signUpButton.layer.masksToBounds = true
