@@ -10,19 +10,29 @@ import Foundation
 import UIKit
 
 class Event {
+    var id: String = ""
     var name: String = ""
     var description: String = ""
     var photo: UIImage? = nil
-    var place: String = ""
-    var date: String = ""
+    var photoString: String? = nil
+    var startDate:String = ""
+    var endDate:String? = nil
+    var place: String? = nil
+    var date: String? = nil
     var cost: Double = 0.0
+    var tickets: [String]? = nil
     
-    init(name: String, description: String,photo:UIImage,place:String,date:String,cost:Double) {
+    init(id: String, name: String, description: String,photo:UIImage?,place:String?,date:String?,cost:Double,photoString:String?,tickets:[String]?,startDate:String,endDate:String?) {
+        self.id = id
         self.name = name
         self.description = description
         self.photo = photo
+        self.photoString = photoString
         self.place = place
         self.date = date
         self.cost = cost
+        self.tickets = tickets
+        self.startDate = startDate
+        self.endDate = endDate
     }
 }

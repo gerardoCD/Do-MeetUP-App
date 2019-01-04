@@ -25,6 +25,8 @@
 		57F9E22621D9B0CB009C9568 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 57F9E22521D9B0CB009C9568 /* Assets.xcassets */; };
 		773316EE157673AD3E15C606 /* Pods_MeetupAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DEADD27C06B2CD8E2C24EEF /* Pods_MeetupAppUITests.framework */; };
 		BD6C7674A3596A60431192CC /* Pods_MeetupApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C99168B739DA94631271066 /* Pods_MeetupApp.framework */; };
+		C107706421DF1870005D3AE6 /* TicketsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C107706321DF1870005D3AE6 /* TicketsViewController.swift */; };
+		C107706721DF1A7E005D3AE6 /* Firebase.swift in Sources */ = {isa = PBXBuildFile; fileRef = C107706621DF1A7E005D3AE6 /* Firebase.swift */; };
 		C10AB4EE21DA87800078C187 /* CodigoQR.swift in Sources */ = {isa = PBXBuildFile; fileRef = C10AB4ED21DA87800078C187 /* CodigoQR.swift */; };
 /* End PBXBuildFile section */
 
@@ -75,6 +77,8 @@
 		8DEADD27C06B2CD8E2C24EEF /* Pods_MeetupAppUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MeetupAppUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A687D5378255DBD054EE0423 /* Pods-MeetupAppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MeetupAppUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MeetupAppUITests/Pods-MeetupAppUITests.release.xcconfig"; sourceTree = "<group>"; };
 		B395F0A299188E15ADD498C3 /* Pods-MeetupAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MeetupAppTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MeetupAppTests/Pods-MeetupAppTests.release.xcconfig"; sourceTree = "<group>"; };
+		C107706321DF1870005D3AE6 /* TicketsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketsViewController.swift; sourceTree = "<group>"; };
+		C107706621DF1A7E005D3AE6 /* Firebase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Firebase.swift; sourceTree = "<group>"; };
 		C10AB4ED21DA87800078C187 /* CodigoQR.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodigoQR.swift; sourceTree = "<group>"; };
 		D960C6737EDC0FB2935B54F4 /* Pods-MeetupAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MeetupAppTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MeetupAppTests/Pods-MeetupAppTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -126,6 +130,7 @@
 				573C918221C165CB007449B2 /* EventDescriptionViewController.swift */,
 				5764F6B921C9509400707A35 /* MainViewController.swift */,
 				57C81AA321DE7C31007CAE14 /* CreateEventViewController.swift */,
+				C107706321DF1870005D3AE6 /* TicketsViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -155,6 +160,7 @@
 		56CE72F021AC3727009D4F75 /* MeetupApp */ = {
 			isa = PBXGroup;
 			children = (
+				C107706521DF1A63005D3AE6 /* DataBase */,
 				57B7CE2821C0AD7000C95819 /* Models */,
 				5657163321B8D32B00702C77 /* Controllers */,
 				56CE72F121AC3727009D4F75 /* AppDelegate.swift */,
@@ -206,6 +212,14 @@
 				A687D5378255DBD054EE0423 /* Pods-MeetupAppUITests.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		C107706521DF1A63005D3AE6 /* DataBase */ = {
+			isa = PBXGroup;
+			children = (
+				C107706621DF1A7E005D3AE6 /* Firebase.swift */,
+			);
+			path = DataBase;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -445,7 +459,9 @@
 				57B7CE2C21C0B57700C95819 /* EventsViewController.swift in Sources */,
 				57B7CE2A21C0AD8200C95819 /* EventsTableViewCell.swift in Sources */,
 				573C918321C165CB007449B2 /* EventDescriptionViewController.swift in Sources */,
+				C107706421DF1870005D3AE6 /* TicketsViewController.swift in Sources */,
 				5657163521B8D35D00702C77 /* LogInViewController.swift in Sources */,
+				C107706721DF1A7E005D3AE6 /* Firebase.swift in Sources */,
 				C10AB4EE21DA87800078C187 /* CodigoQR.swift in Sources */,
 				57B7CE3021C0B81A00C95819 /* Event.swift in Sources */,
 				57C81AA421DE7C31007CAE14 /* CreateEventViewController.swift in Sources */,

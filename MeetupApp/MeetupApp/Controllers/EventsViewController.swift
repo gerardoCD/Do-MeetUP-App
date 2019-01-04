@@ -55,6 +55,7 @@ class EventsViewController: UIViewController, UITableViewDelegate, UITableViewDa
                 for event in snapshot.children.allObjects as! [DataSnapshot] {
                     //getting values
                     var auxList = [String]()
+                    print(event.key)
                     let eventObject = event.value as? [String: AnyObject]
                     let eventName  = eventObject?["Name"]
                     let eventDescription  = eventObject?["Description"]
@@ -68,6 +69,7 @@ class EventsViewController: UIViewController, UITableViewDelegate, UITableViewDa
                     auxList.append(eventMapa as! String)
                     auxList.append(eventName as! String)
                     auxList.append(String(eventPrice as! Double))
+                    auxList.append(event.key)
                     eventlistaux.append(auxList)
                     debugPrint(auxList)
                 }
@@ -81,7 +83,7 @@ class EventsViewController: UIViewController, UITableViewDelegate, UITableViewDa
             let url = URL(string: eventOne[2] )
             let data = try? Data(contentsOf: url!)
             let image  = UIImage(data: data!)
-            events.append(Event(name: eventOne[4], description: eventOne[1], photo: image!, place: eventOne[3], date: eventOne[0], cost: Double(eventOne[5])!))
+            events.append(Event(id: eventOne[6], name: eventOne[4], description: eventOne[1], photo: image!, place: eventOne[3], date: eventOne[0], cost: Double(eventOne[5])!, photoString: eventOne[2], tickets: nil, startDate: "fecha", endDate: nil))
             
         }
        // tableView.reloadData()
@@ -130,7 +132,7 @@ class EventsViewController: UIViewController, UITableViewDelegate, UITableViewDa
                     let event = EKEvent(eventStore: eventStore)
                     print( self.events[indexPath.row].name)
                     event.title = "\(self.events[indexPath.row].name)"
-                    event.location = "\(self.events[indexPath.row].place)"
+                    event.location = "\(String(describing: self.events[indexPath.row].place))"
                     event.startDate = Date()
                     event.endDate = Date()
                     event.notes = "\(self.events[indexPath.row].description)"

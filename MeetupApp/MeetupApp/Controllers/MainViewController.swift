@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class MainViewController: UIViewController {
     
@@ -28,6 +29,11 @@ class MainViewController: UIViewController {
     
     
     override func viewDidLoad() {
+        if Auth.auth().currentUser != nil {
+            signInButton.isHidden = true
+        }else{
+            signInButton.isHidden = false
+        }
         super.viewDidLoad()
         eve.loadEventInfo()
         //set up the UI
@@ -44,6 +50,11 @@ class MainViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         self.eventImage.transform = CGAffineTransform.init(scaleX: 0.2, y: 0.2)
+        if Auth.auth().currentUser != nil {
+            signInButton.isHidden = true
+        }else{
+            signInButton.isHidden = false
+        }
     }
     
     override func viewDidAppear(_ animated: Bool) {

@@ -900,11 +900,37 @@
         <!--Tckets-->
         <scene sceneID="2XY-jh-Zjd">
             <objects>
-                <viewController id="n8R-Vd-kDE" sceneMemberID="viewController">
+                <viewController id="n8R-Vd-kDE" customClass="TicketsViewController" customModule="MeetupApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="TF4-23-qfF">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="DPi-xv-sfk">
+                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="EventTicket" id="Jdd-6n-tTE">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Jdd-6n-tTE" id="KSf-PB-LIZ">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="n8R-Vd-kDE" id="Gnr-gl-wCZ"/>
+                                    <outlet property="delegate" destination="n8R-Vd-kDE" id="BN4-gs-pLZ"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="DPi-xv-sfk" firstAttribute="leading" secondItem="7YO-cL-ZJt" secondAttribute="leading" id="UX0-0a-9bS"/>
+                            <constraint firstItem="DPi-xv-sfk" firstAttribute="top" secondItem="7YO-cL-ZJt" secondAttribute="top" id="XHV-UD-fTT"/>
+                            <constraint firstItem="7YO-cL-ZJt" firstAttribute="bottom" secondItem="DPi-xv-sfk" secondAttribute="bottom" id="ebV-SY-W7Q"/>
+                            <constraint firstItem="7YO-cL-ZJt" firstAttribute="trailing" secondItem="DPi-xv-sfk" secondAttribute="trailing" id="kO4-0l-sZd"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="7YO-cL-ZJt"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Tckets" id="Ld0-Lg-IRG"/>
@@ -969,6 +995,6 @@
         </namedColor>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="dHo-cT-fLZ"/>
+        <segue reference="EfR-pf-EFZ"/>
     </inferredMetricsTieBreakers>
 </document>

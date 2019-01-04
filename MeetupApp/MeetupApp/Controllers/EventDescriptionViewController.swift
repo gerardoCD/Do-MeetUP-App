@@ -102,7 +102,26 @@ class EventDescriptionViewController: UIViewController, UITextFieldDelegate, UII
         },
                        completion: nil)
         if Auth.auth().currentUser != nil {
-            // User is signed in.
+            // User is signed in
+            guard let uid = Auth.auth().currentUser?.uid else { return }
+
+            let databaseRef = Database.database().reference().child("users/profile/\(uid)/events")
+            let key = eve.events[myIndex].id
+           // let key = databaseRef.childByAutoId().key NO BORRARRRRRRR
+
+            let userObject = [
+                key: [
+                    "Name": eve.events[myIndex].name,
+                    "Description": eve.events[myIndex].description,
+                    "Image": eve.events[myIndex].photoString!,
+                    "Start": eve.events[myIndex].startDate,
+                    "Tickets": ["Ticket1": true]
+                ]
+                ] as [String:Any]
+
+            databaseRef.updateChildValues(userObject)
+            
+            
         } else {
             performSegue(withIdentifier: "segueFromBuyToLogin" , sender: nil)
         }
