@@ -11,6 +11,7 @@ import Firebase
 
 class MainViewController: UIViewController {
     
+    @IBOutlet var viewStart: UIView!
     var event: Event?
     var eve = EventsViewController()
     
@@ -26,13 +27,16 @@ class MainViewController: UIViewController {
     @IBOutlet weak var signInButton: UIButton!
     @IBOutlet weak var cloudImage: UIImageView!
     @IBOutlet weak var cloudImageTwo: UIImageView!
+    @IBOutlet weak var logOutButton: UIButton!
     
     
     override func viewDidLoad() {
         if Auth.auth().currentUser != nil {
             signInButton.isHidden = true
+            logOutButton.isHidden = false
         }else{
             signInButton.isHidden = false
+            logOutButton.isHidden = true
         }
         super.viewDidLoad()
         eve.loadEventInfo()
@@ -52,8 +56,10 @@ class MainViewController: UIViewController {
         self.eventImage.transform = CGAffineTransform.init(scaleX: 0.2, y: 0.2)
         if Auth.auth().currentUser != nil {
             signInButton.isHidden = true
+            logOutButton.isHidden = false
         }else{
             signInButton.isHidden = false
+            logOutButton.isHidden = true
         }
     }
     
@@ -87,5 +93,22 @@ class MainViewController: UIViewController {
     @IBAction func infoButtonTapped(_ sender: Any) {
       
     }
+    
+    
+    @IBAction func btnLogOut(_ sender: UIButton) {
+        do{
+            try Auth.auth().signOut()
+            print("EntroAqui")
+            logOutButton.isHidden = true
+            signInButton.isHidden = false
+        }catch{
+            let alert = UIAlertController(title: "Error", message: "You can't Log Out", preferredStyle: .alert )
+            alert.addAction(UIAlertAction(title: "Yes", style: .default, handler:nil))
+            self.present(alert, animated: true)
+        }
+    }
+    
+    
+    
     
 }
