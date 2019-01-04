@@ -15,7 +15,7 @@ class Ticket{
         guard let uid = Auth.auth().currentUser?.uid else { return }
         var ref: DatabaseReference!
         ref = Database.database().reference()
-        ref.child("user/profile/\(uid)/events").observeSingleEvent(of: .value, with: { (snapshot) in
+        ref.child("users/profile/\(uid)/events").observeSingleEvent(of: .value, with: { (snapshot) in
         var events = [Event]()
         for event in snapshot.children.allObjects as! [DataSnapshot] {
                 let eventObject = event.value as? [String: AnyObject]
@@ -25,7 +25,10 @@ class Ticket{
                 let eventDescription = eventObject?["Description"]
                 let eventTickets = eventObject?["Tickets"]
                 let evenStart = eventObject?["Start"]
-            let evento = Event(id: evenId, name: eventName as! String, description: eventDescription as! String, photo: nil , place: nil, date: nil , cost: 0.0, photoString: eventImage as? String, tickets: eventTickets as? [String], startDate: evenStart as! String, endDate: nil)
+                let url = URL(string: eventImage as! String)
+                let data = try? Data(contentsOf: url!)
+                let image  = UIImage(data: data!)
+            let evento = Event(id: evenId, name: eventName as! String, description: eventDescription as! String, photo: image , place: nil, date: nil , cost: 0.0, photoString: eventImage as? String, tickets: eventTickets as? [String], startDate: evenStart as! String, endDate: nil)
                 events.append(evento)
             }
             completion(events)

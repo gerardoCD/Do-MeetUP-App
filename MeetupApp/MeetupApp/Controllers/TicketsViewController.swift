@@ -18,12 +18,17 @@ class TicketsViewController: UIViewController,UITableViewDelegate,UITableViewDat
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //loadDatas()
+        loadDatas()
+        
         // Do any additional setup after loading the view.
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        loadDatas()
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 4
+        return events2.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -32,16 +37,22 @@ class TicketsViewController: UIViewController,UITableViewDelegate,UITableViewDat
         guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? TicketTableViewCell else{
             fatalError("The dequeued cell is not an instance of TicketTableViewCell.")
         }
+        cell.eventTitle.text = events2[indexPath.row].name
+        cell.eventImage.image = events2[indexPath.row].photo
+        cell.dateTitle.text = events2[indexPath.row].startDate
+        
         return cell
     }
 
 
     
-//    func loadDatas(){
-//        Ticket.loadTickets { (events) in
-//            self.events2 = events
-//        }
-//
-//    }
+    func loadDatas(){
+        Ticket.loadTickets { (events) in
+            print(events)
+            self.events2 = events
+            self.tableView.reloadData()
+        }
+
+    }
 
 }
