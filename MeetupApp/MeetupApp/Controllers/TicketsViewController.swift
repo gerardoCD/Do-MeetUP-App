@@ -9,6 +9,7 @@
 import UIKit
 
 class TicketsViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
+    var events2 = [Event]()
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 4
@@ -28,9 +29,16 @@ class TicketsViewController: UIViewController,UITableViewDelegate,UITableViewDat
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        loadDatas()
         // Do any additional setup after loading the view.
     }
 
+    
+    func loadDatas(){
+        Ticket.loadTickets { (events) in
+            self.events2 = events
+        }
+        
+    }
 
 }

@@ -24,7 +24,8 @@ class Ticket{
                 let eventImage = eventObject?["Image"]
                 let eventDescription = eventObject?["Description"]
                 let eventTickets = eventObject?["Tickets"]
-                let evento = Event(id: evenId, name: eventName as! String, description: eventDescription as! String, photo: nil , place: nil, date: nil , cost: 0.0, photoString: eventImage as? String, tickets: eventTickets as? [String], startDate: "Fecha", endDate: nil)
+                let evenStart = eventObject?["Start"]
+            let evento = Event(id: evenId, name: eventName as! String, description: eventDescription as! String, photo: nil , place: nil, date: nil , cost: 0.0, photoString: eventImage as? String, tickets: eventTickets as? [String], startDate: evenStart as! String, endDate: nil)
                 events.append(evento)
             }
             completion(events)
