@@ -12,6 +12,7 @@ import UIKit
 class PageTicketViewController: UIViewController {
     
     var pageTicketViewController: UIPageViewController?
+    var pages = [String]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,9 +32,14 @@ class PageTicketViewController: UIViewController {
         self.view.addSubview(self.pageTicketViewController!.view)
         self.pageTicketViewController!.view.frame = self.view.frame
         self.pageTicketViewController!.didMove(toParent: self)
+        
+        let modelController = ModelController()
+        modelController.pageData = pages
+        
     }
     
     lazy var modelController = ModelController()
+    
 
 
 }

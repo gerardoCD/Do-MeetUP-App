@@ -14,6 +14,8 @@ class TicketsViewController: UIViewController,UITableViewDelegate,UITableViewDat
     
     
     var events2 = [Event]()
+    var tickets = [String]()
+    var completionHandler:((String) -> Int)?
     
     
     override func viewDidLoad() {
@@ -28,7 +30,10 @@ class TicketsViewController: UIViewController,UITableViewDelegate,UITableViewDat
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         myIndex = indexPath.row
-        performSegue(withIdentifier: "segueDetailedTicket", sender: myIndex)
+        performSegue(withIdentifier: "segueQR", sender: myIndex)
+        
+        
+        
     }
     
     
@@ -59,4 +64,18 @@ class TicketsViewController: UIViewController,UITableViewDelegate,UITableViewDat
         }
 
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?)
+    {
+        if segue.destination is QRViewController
+        {
+            let vc = segue.destination as? QRViewController
+            vc?.codesQr = events2[sender as! Int].tickets!
+            vc?.name = events2[sender as! Int].name
+        }
+    }
+    
+    
+   
 }
+

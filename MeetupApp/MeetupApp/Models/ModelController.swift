@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class ModelController: NSObject{
     var pageData: [String] = ["Hola","Hola"]
@@ -15,6 +16,11 @@ class ModelController: NSObject{
         super.init()
         //Create the data model
         print(pageData)
+        
+        Ticket.loadTickets { (event) in
+            self.pageData = [event[0].name,"sistema"]
+            
+        }
     }
     
     func viewControllerAtIndex(_ index: Int, storyboard: UIStoryboard) -> DataViewController?{
@@ -25,6 +31,7 @@ class ModelController: NSObject{
         //create a new view controller and pass suitable data.
         let dataViewController = storyboard.instantiateViewController(withIdentifier: "DataViewController") as! DataViewController
         dataViewController.dataObject = self.pageData[index]
+        
         return dataViewController
     }
     
@@ -66,6 +73,8 @@ extension ModelController: UIPageViewControllerDataSource{
     func presentationIndex(for pageViewController: UIPageViewController) -> Int {
         return 0
     }
+    
+
     
     
 }

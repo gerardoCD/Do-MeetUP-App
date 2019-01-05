@@ -1282,6 +1282,7 @@
                     <connections>
                         <outlet property="tableView" destination="DPi-xv-sfk" id="pO0-L1-B0h"/>
                         <segue destination="szH-gP-bkJ" kind="show" identifier="segueDetailedTicket" id="xcC-Cx-pE6"/>
+                        <segue destination="JKl-fO-PlL" kind="show" identifier="segueQR" id="MSn-M6-mrS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="A9z-9j-n3t" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1301,7 +1302,64 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="g82-hj-tWs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="980" y="1812"/>
+            <point key="canvasLocation" x="185" y="2620"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="8NL-c3-ZuT">
+            <objects>
+                <viewController id="JKl-fO-PlL" customClass="QRViewController" customModule="MeetupApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="TuW-a9-lH2">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CKZ-ho-iEv">
+                                <rect key="frame" x="47" y="193" width="280" height="280"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <gestureRecognizers/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="78F-TY-56c">
+                                <rect key="frame" x="47" y="114" width="257" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DhG-C2-ZT2">
+                                <rect key="frame" x="166" y="521" width="42" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <gestureRecognizers/>
+                        <viewLayoutGuide key="safeArea" id="Fje-XB-FhV"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="Khg-qq-Ohv" appends="YES" id="ckf-hz-Cjx"/>
+                            <outletCollection property="gestureRecognizers" destination="geF-iA-Fmt" appends="YES" id="w35-Lu-oRw"/>
+                        </connections>
+                    </view>
+                    <connections>
+                        <outlet property="imgQR" destination="CKZ-ho-iEv" id="zgY-kQ-O0w"/>
+                        <outlet property="lblContador" destination="DhG-C2-ZT2" id="mAo-ew-mM6"/>
+                        <outlet property="lblTitle" destination="78F-TY-56c" id="nSx-pu-TFM"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="y3v-es-bQW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="left" id="Khg-qq-Ohv">
+                    <connections>
+                        <action selector="swipeLeft:" destination="JKl-fO-PlL" id="jmq-iw-cKc"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="right" id="geF-iA-Fmt">
+                    <connections>
+                        <action selector="swipeRigth:" destination="JKl-fO-PlL" id="i55-gj-Rhh"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer enabled="NO" direction="right" id="WMh-Hk-wqM"/>
+            </objects>
+            <point key="canvasLocation" x="973.60000000000002" y="1811.2443778110946"/>
         </scene>
         <!--Data View Controller-->
         <scene sceneID="Bkx-1y-mad">

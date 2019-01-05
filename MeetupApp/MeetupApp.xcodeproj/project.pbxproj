@@ -32,6 +32,7 @@
 		C107706421DF1870005D3AE6 /* TicketsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C107706321DF1870005D3AE6 /* TicketsViewController.swift */; };
 		C107706721DF1A7E005D3AE6 /* Firebase.swift in Sources */ = {isa = PBXBuildFile; fileRef = C107706621DF1A7E005D3AE6 /* Firebase.swift */; };
 		C10AB4EE21DA87800078C187 /* CodigoQR.swift in Sources */ = {isa = PBXBuildFile; fileRef = C10AB4ED21DA87800078C187 /* CodigoQR.swift */; };
+		C1912FFC21E15BFC0029D55E /* QRViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1912FFB21E15BFC0029D55E /* QRViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -88,6 +89,7 @@
 		C107706321DF1870005D3AE6 /* TicketsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketsViewController.swift; sourceTree = "<group>"; };
 		C107706621DF1A7E005D3AE6 /* Firebase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Firebase.swift; sourceTree = "<group>"; };
 		C10AB4ED21DA87800078C187 /* CodigoQR.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodigoQR.swift; sourceTree = "<group>"; };
+		C1912FFB21E15BFC0029D55E /* QRViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRViewController.swift; sourceTree = "<group>"; };
 		D960C6737EDC0FB2935B54F4 /* Pods-MeetupAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MeetupAppTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MeetupAppTests/Pods-MeetupAppTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -141,6 +143,7 @@
 				C107706321DF1870005D3AE6 /* TicketsViewController.swift */,
 				57CD123921E10EF0009B7FFE /* PageTicketViewController.swift */,
 				57CD123B21E110D2009B7FFE /* DataViewController.swift */,
+				C1912FFB21E15BFC0029D55E /* QRViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -469,6 +472,7 @@
 			files = (
 				56CE72F221AC3727009D4F75 /* AppDelegate.swift in Sources */,
 				57B7CE2C21C0B57700C95819 /* EventsViewController.swift in Sources */,
+				C1912FFC21E15BFC0029D55E /* QRViewController.swift in Sources */,
 				57B7CE2A21C0AD8200C95819 /* EventsTableViewCell.swift in Sources */,
 				57CD123A21E10EF0009B7FFE /* PageTicketViewController.swift in Sources */,
 				573C918321C165CB007449B2 /* EventDescriptionViewController.swift in Sources */,
