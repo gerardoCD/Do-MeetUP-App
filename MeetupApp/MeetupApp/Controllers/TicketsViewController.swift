@@ -19,7 +19,6 @@ class TicketsViewController: UIViewController,UITableViewDelegate,UITableViewDat
     override func viewDidLoad() {
         super.viewDidLoad()
         loadDatas()
-        
         // Do any additional setup after loading the view.
     }
     
@@ -31,7 +30,7 @@ class TicketsViewController: UIViewController,UITableViewDelegate,UITableViewDat
         myIndex = indexPath.row
         performSegue(withIdentifier: "segueDetailedTicket", sender: myIndex)
     }
-
+    
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return events2.count
@@ -60,5 +59,4 @@ class TicketsViewController: UIViewController,UITableViewDelegate,UITableViewDat
         }
 
     }
-
 }
