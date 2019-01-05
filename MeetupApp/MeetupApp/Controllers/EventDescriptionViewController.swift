@@ -108,23 +108,41 @@ class EventDescriptionViewController: UIViewController, UITextFieldDelegate, UII
             let databaseRef = Database.database().reference().child("users/profile/\(uid)/events")
             let key = eve.events[myIndex].id
            // let key = databaseRef.childByAutoId().key NO BORRARRRRRRR
-
+            let numberTickets = sliderBar.hashValue
+            let tickets = generateTickets(number:5)
+            print(tickets)
             let userObject = [
                 key: [
                     "Name": eve.events[myIndex].name,
                     "Description": eve.events[myIndex].description,
                     "Image": eve.events[myIndex].photoString!,
                     "Start": eve.events[myIndex].startDate,
-                    "Tickets": ["Ticket1": true]
+                    "Tickets": tickets
                 ]
                 ] as [String:Any]
 
             databaseRef.updateChildValues(userObject)
             
             
+            
+            
         } else {
             performSegue(withIdentifier: "segueFromBuyToLogin" , sender: nil)
         }
+    }
+    
+    
+    func generateTickets(number: Int) -> [String]{
+        var tickets = [String]()
+        var  contador = 0
+        while (contador < number){
+            let numero = String(Int.random(in: 10000 ... 99999))
+            if !tickets.contains(numero){
+                tickets.append(numero)
+                contador += 1
+            }
+        }
+        return tickets
     }
     
     
