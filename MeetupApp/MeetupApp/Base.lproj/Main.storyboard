@@ -37,7 +37,7 @@
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Event title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tKQ-Aa-wZQ">
-                                                    <rect key="frame" x="123" y="11" width="276" height="21"/>
+                                                    <rect key="frame" x="123" y="11" width="237" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="237" id="HT3-Cj-4mH"/>
                                                         <constraint firstAttribute="height" constant="21" id="LYF-Kq-bOv"/>
@@ -47,7 +47,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Brief description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m0Z-6a-rhk">
-                                                    <rect key="frame" x="123" y="40" width="276" height="39"/>
+                                                    <rect key="frame" x="123" y="40" width="237" height="39"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="237" id="25D-xW-Muu"/>
                                                         <constraint firstAttribute="height" constant="39" id="VPu-hj-6sh"/>
@@ -95,7 +95,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="vlB-lJ-9Va"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Events" id="fUw-xo-U7x"/>
+                    <tabBarItem key="tabBarItem" title="Events" image="event" selectedImage="event" id="fUw-xo-U7x"/>
                     <connections>
                         <outlet property="tableView" destination="tuN-OI-mdY" id="Mfy-sz-pEy"/>
                         <segue destination="9um-CL-rGE" kind="show" identifier="segueDetailedEvent" id="eMp-HT-ciu"/>
@@ -434,10 +434,13 @@
                                     <segue destination="Uts-k2-a4y" kind="show" id="j1o-3d-Icr"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1A9-5S-brX">
-                                <rect key="frame" x="146" y="515" width="122" height="37"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1A9-5S-brX">
+                                <rect key="frame" x="126.5" y="504" width="122" height="37"/>
                                 <color key="backgroundColor" name="LaunchScreenColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="122" id="IKG-3m-6ET"/>
+                                    <constraint firstAttribute="height" constant="37" id="bbP-PA-7fQ"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="21"/>
                                 <state key="normal" title="Log Out">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -454,6 +457,8 @@
                             <constraint firstItem="5x7-Td-9ZV" firstAttribute="leading" secondItem="UAK-Cd-2Y7" secondAttribute="trailing" constant="77.5" id="3YJ-Dw-CEM"/>
                             <constraint firstItem="miv-il-EQm" firstAttribute="top" secondItem="Hdg-hY-5NY" secondAttribute="bottom" constant="37" id="3uU-ha-ntf"/>
                             <constraint firstItem="UAK-Cd-2Y7" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="47z-e6-Zro"/>
+                            <constraint firstItem="1A9-5S-brX" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="5xt-gs-ZAg"/>
+                            <constraint firstItem="Zqo-av-fyZ" firstAttribute="top" secondItem="1A9-5S-brX" secondAttribute="bottom" constant="8" id="DC5-PK-AGZ"/>
                             <constraint firstItem="Zqo-av-fyZ" firstAttribute="top" secondItem="QeE-nh-Oqg" secondAttribute="bottom" constant="94" id="J89-I4-9Ja"/>
                             <constraint firstItem="Hdg-hY-5NY" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="KXv-pK-b08"/>
                             <constraint firstItem="QeE-nh-Oqg" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="PVa-J5-ytv"/>
@@ -470,7 +475,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Main" id="A6n-VM-Fes"/>
+                    <tabBarItem key="tabBarItem" title="Main" image="main" landscapeImage="main" selectedImage="main" id="A6n-VM-Fes"/>
                     <navigationItem key="navigationItem" id="OVM-Cl-aRy"/>
                     <connections>
                         <outlet property="cloudImage" destination="ddr-Qe-Yhw" id="yv8-q8-Uzo"/>
@@ -1181,7 +1186,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ycx-SS-aeD"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Create" id="joe-MJ-0PO"/>
+                    <tabBarItem key="tabBarItem" title="Create" image="createEvent" selectedImage="createEvent" id="joe-MJ-0PO"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="375" height="1350"/>
                     <connections>
@@ -1190,9 +1195,9 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2to-bn-D2P" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1776.8" y="1959.2203898050975"/>
+            <point key="canvasLocation" x="2719" y="2022"/>
         </scene>
-        <!--Tckets-->
+        <!--Tickets-->
         <scene sceneID="2XY-jh-Zjd">
             <objects>
                 <viewController id="n8R-Vd-kDE" customClass="TicketsViewController" customModule="MeetupApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -1219,7 +1224,7 @@
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Event's title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LQJ-Nx-Lvu">
-                                                    <rect key="frame" x="123" y="11" width="284" height="21"/>
+                                                    <rect key="frame" x="123" y="11" width="245" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="245" id="d1V-rL-yCK"/>
                                                         <constraint firstAttribute="height" constant="21" id="leq-la-8ZS"/>
@@ -1229,7 +1234,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="huR-EQ-Tsz">
-                                                    <rect key="frame" x="123" y="40" width="284" height="21"/>
+                                                    <rect key="frame" x="123" y="40" width="245" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="21" id="Ruh-sQ-0ev"/>
                                                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="245" id="Z8M-AU-7Gl"/>
@@ -1273,14 +1278,39 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="7YO-cL-ZJt"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Tckets" id="Ld0-Lg-IRG"/>
+                    <tabBarItem key="tabBarItem" title="Tickets" image="ticket" selectedImage="ticket" id="Ld0-Lg-IRG"/>
                     <connections>
                         <outlet property="tableView" destination="DPi-xv-sfk" id="pO0-L1-B0h"/>
+                        <segue destination="szH-gP-bkJ" kind="show" identifier="segueDetailedTicket" id="xcC-Cx-pE6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="A9z-9j-n3t" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="741.60000000000002" y="1960.569715142429"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="484-RB-jPT">
+            <objects>
+                <viewController id="szH-gP-bkJ" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="oZP-qe-DDv">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="prro" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FWR-9n-blY">
+                                <rect key="frame" x="166" y="181" width="32" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="Nay-Cn-56u"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="g82-hj-tWs" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1582" y="1961"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="USh-9V-8f5">
@@ -1326,10 +1356,14 @@
     <resources>
         <image name="Create" width="696" height="160"/>
         <image name="cloud" width="156" height="104.16000366210938"/>
+        <image name="createEvent" width="22.5" height="22.5"/>
+        <image name="event" width="22.5" height="22.5"/>
         <image name="launcher" width="355" height="123"/>
         <image name="launcher2" width="355" height="123"/>
+        <image name="main" width="22.5" height="22.5"/>
         <image name="people" width="700" height="700"/>
         <image name="peopleBack" width="700" height="512"/>
+        <image name="ticket" width="22.5" height="22.5"/>
         <namedColor name="Interfaces">
             <color red="0.33725490196078434" green="0.33725490196078434" blue="0.58431372549019611" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
@@ -1338,6 +1372,6 @@
         </namedColor>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="EfR-pf-EFZ"/>
+        <segue reference="dHo-cT-fLZ"/>
     </inferredMetricsTieBreakers>
 </document>

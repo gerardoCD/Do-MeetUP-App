@@ -43,6 +43,8 @@ class MainViewController: UIViewController {
         //set up the UI
         signInButton.layer.cornerRadius = 8.0
         signInButton.layer.masksToBounds = true
+        logOutButton.layer.cornerRadius = 8.0
+        logOutButton.layer.masksToBounds = true
         if eve.events.count == 0{
             return
         }else{

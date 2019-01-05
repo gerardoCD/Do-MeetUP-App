@@ -27,6 +27,12 @@ class TicketsViewController: UIViewController,UITableViewDelegate,UITableViewDat
         loadDatas()
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        myIndex = indexPath.row
+        performSegue(withIdentifier: "segueDetailedTicket", sender: myIndex)
+    }
+
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return events2.count
     }
@@ -40,7 +46,7 @@ class TicketsViewController: UIViewController,UITableViewDelegate,UITableViewDat
         cell.eventTitle.text = events2[indexPath.row].name
         cell.eventImage.image = events2[indexPath.row].photo
         cell.dateTitle.text = events2[indexPath.row].startDate
-        
+        cell.accessoryType = .disclosureIndicator
         return cell
     }
 
