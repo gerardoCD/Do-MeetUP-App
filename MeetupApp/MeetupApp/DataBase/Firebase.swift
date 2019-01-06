@@ -12,10 +12,11 @@ import Firebase
 
 class Ticket{
     static func loadTickets(completion: @escaping (_ events: [Event]) -> Void){
-        guard let uid = Auth.auth().currentUser?.uid else { return }
+        let uid = Auth.auth().currentUser?.uid
+        print(uid)
         var ref: DatabaseReference!
         ref = Database.database().reference()
-        ref.child("users/profile/\(uid)/events").observeSingleEvent(of: .value, with: { (snapshot) in
+        ref.child("users/profile/\(uid ?? "")/events").observeSingleEvent(of: .value, with: { (snapshot) in
         var events = [Event]()
         for event in snapshot.children.allObjects as! [DataSnapshot] {
                 let eventObject = event.value as? [String: AnyObject]
@@ -31,6 +32,7 @@ class Ticket{
             let evento = Event(id: evenId, name: eventName as! String, description: eventDescription as! String, photo: image , place: nil, date: nil , cost: 0.0, photoString: eventImage as? String, tickets: eventTickets as? [String], startDate: evenStart as! String, endDate: nil)
                 events.append(evento)
             }
+            print(events)
             completion(events)
         })
         

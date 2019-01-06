@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import Firebase 
 class TicketsViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
     
     @IBOutlet weak var tableView: UITableView!
@@ -20,12 +20,24 @@ class TicketsViewController: UIViewController,UITableViewDelegate,UITableViewDat
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        loadDatas()
+        if Auth.auth().currentUser != nil {
+             loadDatas()
+        } else {
+            events2 = []
+            tableView.reloadData()
+        }
+        
+      //  loadDatas()
         // Do any additional setup after loading the view.
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        loadDatas()
+        if Auth.auth().currentUser != nil {
+             loadDatas()
+        }else{
+            events2 = []
+            tableView.reloadData()
+        }
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
