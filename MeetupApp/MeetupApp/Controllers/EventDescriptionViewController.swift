@@ -40,13 +40,19 @@ class EventDescriptionViewController: UIViewController, UITextFieldDelegate, UII
         
         super.viewDidLoad()
         eve.loadEventInfo()
+        print(eve.events[myIndex].name)
         eventTitleLabel.text = eve.events[myIndex].name
         imageEvent.image = eve.events[myIndex].photo
         eventDescription.text = eve.events[myIndex].description
         whereDescription.text = eve.events[myIndex].place
         dateDescription.text = eve.events[myIndex].date
         priceDescription.text = String(eve.events[myIndex].cost)
-        
+        country = eve.events[myIndex].country!
+        street = eve.events[myIndex].street!
+        city = eve.events[myIndex].city!
+        print(country)
+        print(street)
+        print(city)
         //Login button aspects
         buyButton.layer.cornerRadius = 8.0
         buyButton.layer.masksToBounds = true

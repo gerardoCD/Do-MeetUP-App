@@ -63,6 +63,9 @@ class EventsViewController: UIViewController, UITableViewDelegate, UITableViewDa
                     let eventImage = eventObject?["Image"]
                     let eventMapa = eventObject?["Map"]
                     let eventPrice = eventObject?["Price"]
+                    let eventCountry = eventObject?["Country"]
+                    let eventCity = eventObject?["City"]
+                    let eventStreet = eventObject?["Street"]
                     auxList.append(eventDate as! String)
                     auxList.append(eventDescription as! String)
                     auxList.append(eventImage as! String)
@@ -70,6 +73,12 @@ class EventsViewController: UIViewController, UITableViewDelegate, UITableViewDa
                     auxList.append(eventName as! String)
                     auxList.append(String(eventPrice as! Double))
                     auxList.append(event.key)
+                    auxList.append(eventCountry as! String)
+                    auxList.append(eventCity as! String)
+                    auxList.append(eventStreet as! String)
+//                    print(eventCountry)
+//                    print(eventStreet)
+//                    print(eventCity)
                     eventlistaux.append(auxList)
                    // debugPrint(auxList)
                 }
@@ -83,7 +92,8 @@ class EventsViewController: UIViewController, UITableViewDelegate, UITableViewDa
             let url = URL(string: eventOne[2] )
             let data = try? Data(contentsOf: url!)
             let image  = UIImage(data: data!)
-            events.append(Event(id: eventOne[6], name: eventOne[4], description: eventOne[1], photo: image!, place: eventOne[3], date: eventOne[0], cost: Double(eventOne[5])!, photoString: eventOne[2], tickets: nil, startDate: "fecha", endDate: nil))
+            events.append(Event(id: eventOne[6], name: eventOne[4], description: eventOne[1], photo: image!, place: eventOne[3], date: eventOne[0], cost: Double(eventOne[5])!, photoString: eventOne[2], tickets: nil, startDate: "fecha", endDate: nil, country: eventOne[7], city: eventOne[8], street: eventOne[9]))
+            //print(eventOne[7] + "  " + eventOne[8] + "  " + eventOne[9])
             
         }
        // tableView.reloadData()

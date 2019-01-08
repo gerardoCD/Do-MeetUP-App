@@ -13,7 +13,7 @@ import Firebase
 class Ticket{
     static func loadTickets(completion: @escaping (_ events: [Event]) -> Void){
         let uid = Auth.auth().currentUser?.uid
-        print(uid)
+      
         var ref: DatabaseReference!
         ref = Database.database().reference()
         ref.child("users/profile/\(uid ?? "")/events").observeSingleEvent(of: .value, with: { (snapshot) in
@@ -29,7 +29,7 @@ class Ticket{
                 let url = URL(string: eventImage as! String)
                 let data = try? Data(contentsOf: url!)
                 let image  = UIImage(data: data!)
-            let evento = Event(id: evenId, name: eventName as! String, description: eventDescription as! String, photo: image , place: nil, date: nil , cost: 0.0, photoString: eventImage as? String, tickets: eventTickets as? [String], startDate: evenStart as! String, endDate: nil)
+            let evento = Event(id: evenId, name: eventName as! String, description: eventDescription as! String, photo: image , place: nil, date: nil , cost: 0.0, photoString: eventImage as? String, tickets: eventTickets as? [String], startDate: evenStart as! String, endDate: nil, country: nil, city: nil, street: nil)
                 events.append(evento)
             }
             print(events)
