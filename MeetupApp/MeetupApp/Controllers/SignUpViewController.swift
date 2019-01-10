@@ -12,12 +12,13 @@ import FirebaseDatabase
 class SignUpViewController: UIViewController {
     
     @IBOutlet weak var heading: UIImageView!
-    @IBOutlet weak var subHeading: UITextView!
+    @IBOutlet weak var subHeading: UIImageView!
     @IBOutlet weak var signUpButton: UIButton!
     @IBOutlet weak var lblEmail: UITextField!
     @IBOutlet weak var lblUserName: UITextField!
     @IBOutlet weak var lblPassword: UITextField!
     @IBOutlet weak var lblConfirmPassword: UITextField!
+    @IBOutlet weak var meetImage: UIImageView!
     
 
     override func viewDidLoad() {
@@ -29,11 +30,18 @@ class SignUpViewController: UIViewController {
         signUpButton.layer.masksToBounds = true
         signUpButton.isUserInteractionEnabled = false
         signUpButton.alpha = 0.5
+        meetImage.alpha = 0.0
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        meetImage.center.x -= view.bounds.width
     }
     
     //Settings after the view appears
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        self.meetImage.alpha = 1.0
         UIView.animate(withDuration: 1.0){
             self.heading.transform = CGAffineTransform.init(scaleX: 2.0, y: 2.0)
             self.heading.transform = CGAffineTransform.init(scaleX: 1.0, y: 1.0)
@@ -41,6 +49,11 @@ class SignUpViewController: UIViewController {
         UIView.animate(withDuration: 1, delay: 0.3, options: [], animations:{
             self.subHeading.transform = CGAffineTransform.init(scaleX: 1.7, y: 1.7)
             self.subHeading.transform = CGAffineTransform.init(scaleX: 1.0, y: 1.0)
+        },
+                       completion: nil
+        )
+        UIView.animate(withDuration: 1.5, delay: 0.3, options: [], animations:{
+           self.meetImage.center.x += self.view.bounds.width
         },
                        completion: nil
         )

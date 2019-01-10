@@ -135,7 +135,7 @@ class EventsViewController: UIViewController, UITableViewDelegate, UITableViewDa
         return cell
     }
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
-        let calendar = UITableViewRowAction(style: .normal, title: "Calendar") { action, index in
+        let calendar = UITableViewRowAction(style: .normal, title: "\u{1F4C5}\n") { action, index in
             let eventStore = EKEventStore()
             eventStore.requestAccess(to: .event, completion: { (succes, error) in
                 if error == nil{
@@ -171,7 +171,7 @@ class EventsViewController: UIViewController, UITableViewDelegate, UITableViewDa
         }
         calendar.backgroundColor = .lightGray
         
-        let share = UITableViewRowAction(style: .normal, title: "Share") { action, index in
+        let share = UITableViewRowAction(style: .normal, title: "↩️") { action, index in
             let activityController = UIActivityViewController(activityItems: [self.events[indexPath.row].name,self.events[indexPath.row].description,self.events[indexPath.row].photo!],
                                                               applicationActivities: nil)
             self.present(activityController, animated: true, completion: nil)
@@ -180,8 +180,4 @@ class EventsViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
         return [share, calendar]
     }
-    
-
-    
-
 }

@@ -25,9 +25,9 @@ class MainViewController: UIViewController {
     @IBOutlet weak var eventTitleLabel: UILabel!
     @IBOutlet weak var findMoreLabel: UILabel!
     @IBOutlet weak var signInButton: UIButton!
-    @IBOutlet weak var cloudImage: UIImageView!
-    @IBOutlet weak var cloudImageTwo: UIImageView!
     @IBOutlet weak var logOutButton: UIButton!
+    @IBOutlet weak var threeImage: UIImageView!
+    @IBOutlet weak var meetImage: UIImageView!
     
     
     override func viewDidLoad() {
@@ -41,6 +41,8 @@ class MainViewController: UIViewController {
         super.viewDidLoad()
         eve.loadEventInfo()
         //set up the UI
+        threeImage.alpha = 1.0
+        meetImage.alpha = 0.0
         signInButton.layer.cornerRadius = 8.0
         signInButton.layer.masksToBounds = true
         logOutButton.layer.cornerRadius = 8.0
@@ -80,12 +82,8 @@ class MainViewController: UIViewController {
         }
         
         UIView.animate(withDuration: 7, delay: 0.3, options: [.curveEaseInOut, .repeat, .autoreverse], animations:{
-            self.cloudImage.alpha = 0.1
-            self.cloudImageTwo.alpha = 0.1
-            self.cloudImage.center.x += self.view.bounds.width/8
-            self.cloudImageTwo.center.x -= self.view.bounds.width/12
-            self.cloudImage.alpha = 1.0
-            self.cloudImageTwo.alpha = 1.0
+            self.threeImage.alpha = 0.0
+            self.meetImage.alpha = 1.0
         },
                        completion: nil
         )

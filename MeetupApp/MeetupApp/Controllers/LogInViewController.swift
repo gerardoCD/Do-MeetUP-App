@@ -23,6 +23,7 @@ class LogInViewController: UIViewController {
     @IBOutlet weak var loginButton: UIButton!
     @IBOutlet weak var txtEmail: UITextField!
     @IBOutlet weak var txtPassword: UITextField!
+    @IBOutlet weak var treeImage: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,6 +33,7 @@ class LogInViewController: UIViewController {
         loginButton.layer.masksToBounds = true
         loginButton.isUserInteractionEnabled = false
         loginButton.alpha = 0.5
+        treeImage.alpha = 0.0
     }
     
     //Settings after the view appears
@@ -40,6 +42,10 @@ class LogInViewController: UIViewController {
         UIView.animate(withDuration: 1.0){
             self.heading.transform = CGAffineTransform.init(scaleX: 2.0, y: 2.0)
             self.heading.transform = CGAffineTransform.init(scaleX: 1.0, y: 1.0)
+        }
+        
+        UIView.animate(withDuration: 5.0){
+            self.treeImage.alpha = 1.0
         }
     }
     

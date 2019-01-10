@@ -7,12 +7,12 @@
     {
       "idiom" : "universal",
       "color" : {
-        "color-space" : "srgb",
+        "color-space" : "extended-linear-srgb",
         "components" : {
-          "red" : "0x18",
+          "red" : "0xCE",
           "alpha" : "1.000",
-          "blue" : "0x52",
-          "green" : "0x29"
+          "blue" : "0xEF",
+          "green" : "0xDD"
         }
       }
     }

@@ -113,8 +113,9 @@ class EventDescriptionViewController: UIViewController, UITextFieldDelegate, UII
 
             let databaseRef = Database.database().reference().child("users/profile/\(uid)/events")
             let key = eve.events[myIndex].id
-           // let key = databaseRef.childByAutoId().key NO BORRARRRRRRR
-            let numberTickets = sliderBar.hashValue
+            // let key = databaseRef.childByAutoId().key NO BORRARRRRRRR
+            let numberTickets = Int(sliderBar.value)
+            print("Hola prro .v\(numberTickets)")
             let tickets = generateTickets(number:5)
             print(tickets)
             let userObject = [
