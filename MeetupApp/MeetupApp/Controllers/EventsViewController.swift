@@ -59,7 +59,7 @@ class EventsViewController: UIViewController, UITableViewDelegate, UITableViewDa
                     let eventObject = event.value as? [String: AnyObject]
                     let eventName  = eventObject?["Name"]
                     let eventDescription  = eventObject?["Description"]
-                    let eventDate = eventObject?["Date"]
+                    let eventDate = eventObject?["StartDate"]
                     let eventImage = eventObject?["Image"]
                     let eventMapa = eventObject?["Map"]
                     let eventPrice = eventObject?["Price"]
