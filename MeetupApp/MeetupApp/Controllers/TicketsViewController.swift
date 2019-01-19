@@ -67,7 +67,7 @@ class TicketsViewController: UIViewController,UITableViewDelegate,UITableViewDat
             let image  = UIImage(data: data!)
             cell.eventImage.image = image
         }
-        cell.dateTitle.text = events2[indexPath.row].startDate
+        cell.dateTitle.text = "Start: " + events2[indexPath.row].startDate
         cell.accessoryType = .disclosureIndicator
         return cell
     }

@@ -17,6 +17,8 @@ class Event {
     var photoString: String? = nil
     var startDate:String = ""
     var endDate:String? = nil
+    var startHour:String? = nil
+    var endHour:String? = nil
     var place: String? = nil
     var date: String? = nil
     var cost: Double = 0.0
@@ -25,7 +27,7 @@ class Event {
     var street: String? = nil
     var tickets: [String]? = nil
     
-    init(id: String, name: String, description: String,photo:UIImage?,place:String?,date:String?,cost:Double,photoString:String?,tickets:[String]?,startDate:String,endDate:String?,country:String?,city:String?,street:String?) {
+    init(id: String, name: String, description: String,photo:UIImage?,place:String?,date:String?,cost:Double,photoString:String?,tickets:[String]?,startDate:String,endDate:String?,country:String?,city:String?,street:String?,startHour:String?,endHour:String?) {
         self.id = id
         self.name = name
         self.description = description
@@ -40,5 +42,8 @@ class Event {
         self.country = country
         self.city = city
         self.street = street
+        self.startHour = startHour
+        self.endHour = endHour
+        
     }
 }

@@ -48,7 +48,10 @@ class EventDescriptionViewController: UIViewController, UITextFieldDelegate, UII
         imageEvent.image = eve.events[myIndex].photo
         eventDescription.text = eve.events[myIndex].description
         whereDescription.text = eve.events[myIndex].place
-        dateDescription.text = eve.events[myIndex].date
+        dateDescription.text = eve.events[myIndex].startDate
+        endDate.text = eve.events[myIndex].endDate
+        startHour.text =  eve.events[myIndex].startHour
+        endHour.text = eve.events[myIndex].endHour
         //endDate.text = eve.events[myIndex].endDate
         //startHour.text = eve.events[myIndex]
         //endHour.text = eve.events[myIndex]

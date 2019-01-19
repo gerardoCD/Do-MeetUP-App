@@ -61,14 +61,18 @@ class EventsViewController: UIViewController, UITableViewDelegate, UITableViewDa
                     let eventObject = event.value as? [String: AnyObject]
                     let eventName  = eventObject?["Name"]
                     let eventDescription  = eventObject?["Description"]
-                    let eventDate = eventObject?["StartDate"]
+                    let eventStartDate = eventObject?["StartDate"]
                     let eventImage = eventObject?["Image"]
                     let eventMapa = eventObject?["Map"]
                     let eventPrice = eventObject?["Price"]
                     let eventCountry = eventObject?["Country"]
                     let eventCity = eventObject?["City"]
                     let eventStreet = eventObject?["Street"]
-                    auxList.append(eventDate as! String)
+                    let eventStartHour = eventObject?["StartHour"]
+                    let eventEndHour = eventObject?["EndHour"]
+                    let eventEndDate = eventObject?["EndDate"]
+                    print(eventEndDate)
+                    auxList.append(eventStartDate as! String)
                     auxList.append(eventDescription as! String)
                     auxList.append(eventImage as! String)
                     auxList.append(eventMapa as! String)
@@ -78,9 +82,9 @@ class EventsViewController: UIViewController, UITableViewDelegate, UITableViewDa
                     auxList.append(eventCountry as! String)
                     auxList.append(eventCity as! String)
                     auxList.append(eventStreet as! String)
-//                    print(eventCountry)
-//                    print(eventStreet)
-//                    print(eventCity)
+                    auxList.append(eventStartHour as! String)
+                    auxList.append(eventEndHour as! String)
+                    auxList.append(eventEndDate as! String)
                     eventlistaux.append(auxList)
                    // debugPrint(auxList)
                 }
@@ -94,7 +98,7 @@ class EventsViewController: UIViewController, UITableViewDelegate, UITableViewDa
             let url = URL(string: eventOne[2] )
             let data = try? Data(contentsOf: url!)
             let image  = UIImage(data: data!)
-            events.append(Event(id: eventOne[6], name: eventOne[4], description: eventOne[1], photo: image!, place: eventOne[3], date: eventOne[0], cost: Double(eventOne[5])!, photoString: eventOne[2], tickets: nil, startDate: "fecha", endDate: nil, country: eventOne[7], city: eventOne[8], street: eventOne[9]))
+            events.append(Event(id: eventOne[6], name: eventOne[4], description: eventOne[1], photo: image!, place: eventOne[3], date: nil, cost: Double(eventOne[5])!, photoString: eventOne[2], tickets: nil, startDate: eventOne[0], endDate: eventOne[12], country: eventOne[7], city: eventOne[8], street: eventOne[9], startHour: eventOne[10], endHour: eventOne[11]))
             //print(eventOne[7] + "  " + eventOne[8] + "  " + eventOne[9])
             
         }
