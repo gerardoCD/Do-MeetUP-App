@@ -31,6 +31,8 @@ class MainViewController: UIViewController {
     
     
     override func viewDidLoad() {
+        super.viewDidLoad()
+        eve.loadEventInfo()
         if Auth.auth().currentUser != nil {
             signInButton.isHidden = true
             logOutButton.isHidden = false
@@ -38,8 +40,7 @@ class MainViewController: UIViewController {
             signInButton.isHidden = false
             logOutButton.isHidden = true
         }
-        super.viewDidLoad()
-        eve.loadEventInfo()
+       
         //set up the UI
         threeImage.alpha = 1.0
         meetImage.alpha = 0.0
@@ -55,6 +56,7 @@ class MainViewController: UIViewController {
             eventTitleLabel.text = eve.events[randomNumber].name
         }
     }
+    
     
     override func viewWillAppear(_ animated: Bool) {
         self.eventImage.transform = CGAffineTransform.init(scaleX: 0.2, y: 0.2)

@@ -23,6 +23,8 @@ class EventsViewController: UIViewController, UITableViewDelegate, UITableViewDa
         loadEventInfo()
     }
     
+    
+    
     //Datos hardcodeados para probar
     func loadEventInfo(){
             var ref: DatabaseReference!
@@ -174,7 +176,7 @@ class EventsViewController: UIViewController, UITableViewDelegate, UITableViewDa
         calendar.backgroundColor = .lightGray
         
         let share = UITableViewRowAction(style: .normal, title: "↩️") { action, index in
-            let activityController = UIActivityViewController(activityItems: [self.events[indexPath.row].name,self.events[indexPath.row].description,self.events[indexPath.row].photo!],
+            let activityController = UIActivityViewController(activityItems: [self.events[indexPath.row].name,self.events[indexPath.row].startDate,self.events[indexPath.row].photo!],
                                                               applicationActivities: nil)
             self.present(activityController, animated: true, completion: nil)
         }

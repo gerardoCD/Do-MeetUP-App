@@ -17,6 +17,9 @@ class EventDescriptionViewController: UIViewController, UITextFieldDelegate, UII
     @IBOutlet weak var eventDescription: UITextView!
     @IBOutlet weak var whereDescription: UITextView!
     @IBOutlet weak var dateDescription: UILabel!
+    @IBOutlet weak var endDate: UILabel!
+    @IBOutlet weak var startHour: UILabel!
+    @IBOutlet weak var endHour: UILabel!
     @IBOutlet weak var priceDescription: UILabel!
     @IBOutlet weak var buyButton: UIButton!
     @IBOutlet weak var numberTickets: UILabel!
@@ -30,9 +33,9 @@ class EventDescriptionViewController: UIViewController, UITextFieldDelegate, UII
     var eve = EventsViewController()
     //Datos hardcodeados para probar ubicación
     let regionRadius: CLLocationDistance = 100
-    var country = "Mexico"
-    var city = "Ciudad de Mexico"
-    var street = "Calle Francisco I. Madero 17"
+    var country = ""
+    var city = ""
+    var street = ""
     lazy var geocoder = CLGeocoder()
     
    
@@ -40,19 +43,22 @@ class EventDescriptionViewController: UIViewController, UITextFieldDelegate, UII
         
         super.viewDidLoad()
         eve.loadEventInfo()
-        print(eve.events[myIndex].name)
+        //print(eve.events[myIndex].name)
         eventTitleLabel.text = eve.events[myIndex].name
         imageEvent.image = eve.events[myIndex].photo
         eventDescription.text = eve.events[myIndex].description
         whereDescription.text = eve.events[myIndex].place
         dateDescription.text = eve.events[myIndex].date
+        //endDate.text = eve.events[myIndex].endDate
+        //startHour.text = eve.events[myIndex]
+        //endHour.text = eve.events[myIndex]
         priceDescription.text = String(eve.events[myIndex].cost)
         country = eve.events[myIndex].country!
         street = eve.events[myIndex].street!
         city = eve.events[myIndex].city!
-        print(country)
-        print(street)
-        print(city)
+//        print(country)
+//        print(street)
+//        print(city)
         //Login button aspects
         buyButton.layer.cornerRadius = 8.0
         buyButton.layer.masksToBounds = true
@@ -115,9 +121,8 @@ class EventDescriptionViewController: UIViewController, UITextFieldDelegate, UII
             let key = eve.events[myIndex].id
             // let key = databaseRef.childByAutoId().key NO BORRARRRRRRR
             let numberTickets = Int(sliderBar.value)
-            print("Hola prro .v\(numberTickets)")
-            let tickets = generateTickets(number:5)
-            print(tickets)
+            let tickets = generateTickets(number:numberTickets)
+            //print(tickets)
             let userObject = [
                 key: [
                     "Name": eve.events[myIndex].name,
