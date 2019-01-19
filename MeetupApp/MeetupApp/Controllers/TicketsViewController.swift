@@ -60,7 +60,13 @@ class TicketsViewController: UIViewController,UITableViewDelegate,UITableViewDat
             fatalError("The dequeued cell is not an instance of TicketTableViewCell.")
         }
         cell.eventTitle.text = events2[indexPath.row].name
-        cell.eventImage.image = events2[indexPath.row].photo
+        
+        DispatchQueue.main.async {
+            let url = URL(string:  self.events2[indexPath.row].photoString!)
+            let data = try? Data(contentsOf: url!)
+            let image  = UIImage(data: data!)
+            cell.eventImage.image = image
+        }
         cell.dateTitle.text = events2[indexPath.row].startDate
         cell.accessoryType = .disclosureIndicator
         return cell
