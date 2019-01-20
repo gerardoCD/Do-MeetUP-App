@@ -65,6 +65,8 @@ class EventDescriptionViewController: UIViewController, UITextFieldDelegate, UII
         //Login button aspects
         buyButton.layer.cornerRadius = 8.0
         buyButton.layer.masksToBounds = true
+        buyButton.isUserInteractionEnabled = false
+        buyButton.alpha = 0.5
         
         // Geocode Address String
         let address = "\(country), \(city), \(street)"
@@ -105,6 +107,14 @@ class EventDescriptionViewController: UIViewController, UITextFieldDelegate, UII
     @IBAction func sliderChanged(_ sender: UISlider) {
         let currentValue = Int(sender.value)
         numberTickets.text = String(currentValue)
+        if currentValue == 0{
+            buyButton.isUserInteractionEnabled = false
+            buyButton.alpha = 0.5
+        }
+        else{
+            buyButton.isUserInteractionEnabled = true
+            buyButton.alpha = 1.0
+        }
     }
     
     @IBAction func buyButtonTapped(_ sender: Any) {
@@ -138,11 +148,19 @@ class EventDescriptionViewController: UIViewController, UITextFieldDelegate, UII
 
             databaseRef.updateChildValues(userObject)
             
+            let cost: Double = eve.events[myIndex].cost
+            let total = cost*Double(numberTickets)
             
+            let alert = UIAlertController(title: "Purchase made", message: "Total cost: \(total). Enjoy it!", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: {(alert: UIAlertAction!) in  self.navigationController?.popToRootViewController(animated: true)}))
+            self.present(alert, animated: true)
             
             
         } else {
             performSegue(withIdentifier: "segueFromBuyToLogin" , sender: nil)
+            let alert = UIAlertController(title: "You're no loged", message: "Login before to try to buy something", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "I Understand", style: UIAlertAction.Style.default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
         }
     }
     

@@ -71,7 +71,7 @@ class EventsViewController: UIViewController, UITableViewDelegate, UITableViewDa
                     let eventStartHour = eventObject?["StartHour"]
                     let eventEndHour = eventObject?["EndHour"]
                     let eventEndDate = eventObject?["EndDate"]
-                    print(eventEndDate)
+                    //print(eventEndDate)
                     auxList.append(eventStartDate as! String)
                     auxList.append(eventDescription as! String)
                     auxList.append(eventImage as! String)
