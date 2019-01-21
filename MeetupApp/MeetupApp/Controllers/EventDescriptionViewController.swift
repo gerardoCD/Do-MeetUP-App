@@ -26,8 +26,15 @@ class EventDescriptionViewController: UIViewController, UITextFieldDelegate, UII
     @IBOutlet weak var sliderBar: UISlider!
     @IBOutlet weak var mapView: MKMapView!
     
-    
-    
+    //////----------
+    var eventName = ""
+    var eventPhoto = UIImage()
+    var eventDescriptionVar = ""
+//    var eventStartDate
+//    var eventEndDate
+//    var eventStarHour
+//    var eventEndHour
+//    var 
 
     var event: Event?
     var eve = EventsViewController()
@@ -52,16 +59,10 @@ class EventDescriptionViewController: UIViewController, UITextFieldDelegate, UII
         endDate.text = eve.events[myIndex].endDate
         startHour.text =  eve.events[myIndex].startHour
         endHour.text = eve.events[myIndex].endHour
-        //endDate.text = eve.events[myIndex].endDate
-        //startHour.text = eve.events[myIndex]
-        //endHour.text = eve.events[myIndex]
         priceDescription.text = String(eve.events[myIndex].cost)
         country = eve.events[myIndex].country!
         street = eve.events[myIndex].street!
         city = eve.events[myIndex].city!
-//        print(country)
-//        print(street)
-//        print(city)
         //Login button aspects
         buyButton.layer.cornerRadius = 8.0
         buyButton.layer.masksToBounds = true
