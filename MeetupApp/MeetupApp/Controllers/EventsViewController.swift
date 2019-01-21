@@ -22,14 +22,16 @@ class EventsViewController: UIViewController, UITableViewDelegate, UITableViewDa
         super.viewDidLoad()
         loadEventInfo()
     }
-    
+    override func viewDidAppear(_ animated: Bool) {
+        loadEventInfo()
+    }
     
     
     //Datos hardcodeados para probar
     func loadEventInfo(){
             var ref: DatabaseReference!
             ref = Database.database().reference()
-            ref.child("events").observeSingleEvent(of: .value, with: { (snapshot) in
+            ref.child("events").observe(DataEventType.value, with: { (snapshot) in
             //let username = value?["username"] as? String ?? ""
             //let user = User(username: username)
 //                for (_, valor) in value!{
