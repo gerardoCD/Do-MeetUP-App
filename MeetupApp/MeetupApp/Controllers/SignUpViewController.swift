@@ -23,7 +23,7 @@ class SignUpViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.hideKeyboardWhenTappedAround() 
         // Do any additional setup after loading the view.
         //Login button aspects
         signUpButton.layer.cornerRadius = 8.0
