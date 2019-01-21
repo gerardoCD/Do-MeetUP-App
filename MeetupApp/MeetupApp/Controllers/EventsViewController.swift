@@ -97,10 +97,10 @@ class EventsViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
         guard let eventArrayString = UserDefaults.standard.array(forKey: "Events")else { return }
         for eventOne in eventArrayString as! [[String]]{
-            let url = URL(string: eventOne[2] )
-            let data = try? Data(contentsOf: url!)
-            let image  = UIImage(data: data!)
-            events.append(Event(id: eventOne[6], name: eventOne[4], description: eventOne[1], photo: image!, place: eventOne[3], date: nil, cost: Double(eventOne[5])!, photoString: eventOne[2], tickets: nil, startDate: eventOne[0], endDate: eventOne[12], country: eventOne[7], city: eventOne[8], street: eventOne[9], startHour: eventOne[10], endHour: eventOne[11]))
+//            let url = URL(string: eventOne[2] )
+//            let data = try? Data(contentsOf: url!)
+//            let image  = UIImage(data: data!)
+            events.append(Event(id: eventOne[6], name: eventOne[4], description: eventOne[1], photo: nil, place: eventOne[3], date: nil, cost: Double(eventOne[5])!, photoString: eventOne[2], tickets: nil, startDate: eventOne[0], endDate: eventOne[12], country: eventOne[7], city: eventOne[8], street: eventOne[9], startHour: eventOne[10], endHour: eventOne[11]))
             //print(eventOne[7] + "  " + eventOne[8] + "  " + eventOne[9])
             
         }
@@ -139,7 +139,10 @@ class EventsViewController: UIViewController, UITableViewDelegate, UITableViewDa
         cell.labelEventTitle.text = event.name
         cell.labelEventDescription.text = event.description
         DispatchQueue.main.async {
-             cell.eventImage.image = event.photo
+            let url = URL(string: event.photoString!)
+            let data = try? Data(contentsOf: url!)
+            let image  = UIImage(data: data!)
+             cell.eventImage.image = image
         }
         cell.accessoryType = .disclosureIndicator
         return cell
