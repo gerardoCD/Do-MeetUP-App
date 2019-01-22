@@ -9,7 +9,7 @@
 import UIKit
 import FirebaseAuth
 import FirebaseDatabase
-class SignUpViewController: UIViewController {
+class SignUpViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var heading: UIImageView!
     @IBOutlet weak var subHeading: UIImageView!
@@ -19,6 +19,7 @@ class SignUpViewController: UIViewController {
     @IBOutlet weak var lblPassword: UITextField!
     @IBOutlet weak var lblConfirmPassword: UITextField!
     @IBOutlet weak var meetImage: UIImageView!
+    @IBOutlet weak var Scroll: UIScrollView!
     
 
     override func viewDidLoad() {
@@ -31,6 +32,14 @@ class SignUpViewController: UIViewController {
         signUpButton.isUserInteractionEnabled = false
         signUpButton.alpha = 0.5
         meetImage.alpha = 0.0
+    }
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        Scroll.setContentOffset((CGPoint(x: 0, y: 200)), animated: true)
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        Scroll.setContentOffset((CGPoint(x: 0, y: 0)), animated: true)
     }
     
     override func viewWillAppear(_ animated: Bool) {
