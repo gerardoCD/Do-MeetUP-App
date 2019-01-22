@@ -15,13 +15,17 @@ var myIndex = 0
 class EventsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var tableView: UITableView!
-    
+    var refresher: UIRefreshControl!
     
     var events = [Event]()
     
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        refresher = UIRefreshControl()
+        refresher.attributedTitle = NSAttributedString(string: "Update Events")
+        refresher.addTarget(self, action: #selector(EventsViewController.loadEventInfo), for: UIControl.Event.valueChanged)
+        tableView.addSubview(refresher)
         loadEventInfo()
     }
     override func viewDidAppear(_ animated: Bool) {
@@ -30,7 +34,7 @@ class EventsViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     
     //Datos hardcodeados para probar
-    func loadEventInfo(){
+    @objc func loadEventInfo(){
         Event.loadTickets { (eventsAux) in
             self.events = eventsAux
             self.tableView?.reloadData()
@@ -143,5 +147,8 @@ class EventsViewController: UIViewController, UITableViewDelegate, UITableViewDa
             vc?.eventStreet = events[sender as! Int].street!
         }
     }
+    
+    
+    
     
 }
