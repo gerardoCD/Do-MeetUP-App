@@ -30,12 +30,16 @@ class EventDescriptionViewController: UIViewController, UITextFieldDelegate, UII
     var eventName = ""
     var eventPhoto = UIImage()
     var eventDescriptionVar = ""
-//    var eventStartDate
-//    var eventEndDate
-//    var eventStarHour
-//    var eventEndHour
-//    var 
-
+    var eventPlace = ""
+    var eventStartDate = ""
+    var eventEndDate = ""
+    var eventStarHour = ""
+    var eventEndHour = ""
+    var eventPrice = 0.0
+    var eventCountry = ""
+    var eventCity = ""
+    var eventStreet = ""
+    
     var event: Event?
     var eve = EventsViewController()
     //Datos hardcodeados para probar ubicación
@@ -43,26 +47,27 @@ class EventDescriptionViewController: UIViewController, UITextFieldDelegate, UII
     var country = ""
     var city = ""
     var street = ""
+    
     lazy var geocoder = CLGeocoder()
     
    
     override func viewDidLoad() {
         
         super.viewDidLoad()
-        eve.loadEventInfo()
+       // eve.loadEventInfo()
         //print(eve.events[myIndex].name)
-        eventTitleLabel.text = eve.events[myIndex].name
-        imageEvent.image = eve.events[myIndex].photo
-        eventDescription.text = eve.events[myIndex].description
-        whereDescription.text = eve.events[myIndex].place
-        dateDescription.text = eve.events[myIndex].startDate
-        endDate.text = eve.events[myIndex].endDate
-        startHour.text =  eve.events[myIndex].startHour
-        endHour.text = eve.events[myIndex].endHour
-        priceDescription.text = String(eve.events[myIndex].cost)
-        country = eve.events[myIndex].country!
-        street = eve.events[myIndex].street!
-        city = eve.events[myIndex].city!
+        eventTitleLabel.text = eventName
+        imageEvent.image = eventPhoto
+        eventDescription.text = eventDescriptionVar
+        whereDescription.text = eventPlace
+        dateDescription.text = eventStartDate
+        endDate.text = eventEndDate
+        startHour.text =  eventStarHour
+        endHour.text = eventEndHour
+        priceDescription.text = String(eventPrice)
+        country = eventCountry
+        street = eventStreet
+        city = eventCity
         //Login button aspects
         buyButton.layer.cornerRadius = 8.0
         buyButton.layer.masksToBounds = true

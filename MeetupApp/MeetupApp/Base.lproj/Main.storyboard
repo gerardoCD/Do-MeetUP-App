@@ -82,7 +82,6 @@
                                 <connections>
                                     <outlet property="dataSource" destination="ggb-hX-JJh" id="YNg-ar-qGc"/>
                                     <outlet property="delegate" destination="ggb-hX-JJh" id="Em1-yA-RqW"/>
-                                    <outlet property="prefetchDataSource" destination="ggb-hX-JJh" id="WSO-2p-rOM"/>
                                 </connections>
                             </tableView>
                         </subviews>
@@ -97,7 +96,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Events" image="event" selectedImage="event" id="fUw-xo-U7x"/>
                     <connections>
-                        <outlet property="tableView" destination="tuN-OI-mdY" id="Mfy-sz-pEy"/>
+                        <outlet property="tableView" destination="tuN-OI-mdY" id="G1M-yO-DPE"/>
                         <segue destination="9um-CL-rGE" kind="show" identifier="segueDetailedEvent" id="eMp-HT-ciu"/>
                     </connections>
                 </viewController>
@@ -1278,6 +1277,6 @@
         </namedColor>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="dHo-cT-fLZ"/>
+        <segue reference="EfR-pf-EFZ"/>
     </inferredMetricsTieBreakers>
 </document>

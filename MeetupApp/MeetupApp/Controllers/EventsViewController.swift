@@ -15,6 +15,8 @@ var myIndex = 0
 class EventsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var tableView: UITableView!
+    
+    
     var events = [Event]()
     
 
@@ -31,8 +33,8 @@ class EventsViewController: UIViewController, UITableViewDelegate, UITableViewDa
     func loadEventInfo(){
         Event.loadTickets { (eventsAux) in
             self.events = eventsAux
+            self.tableView?.reloadData()
         }
-        tableView.reloadData()
     }
 
     // MARK: - Table view data source
@@ -124,18 +126,22 @@ class EventsViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?)
     {
-//        if segue.destination is MyEventsDescriptionViewController
-//        {
-//            let vc = segue.destination as? MyEventsDescriptionViewController
-//            vc?.title2 = events[sender as! Int].name
-//            vc?.startDate = events[sender as! Int].startDate!
-//            vc?.endDate = events[sender as! Int].endDate!
-//            vc?.img = events[sender as! Int].photo!
-//            vc?.price = events[sender as! Int].cost
-//            vc?.idEvent = events[sender as! Int].id
-//            //vc?.codesQr = events2[sender as! Int].tickets!
-//            // vc?.name = events2[sender as! Int].name
-//        }
+        if segue.destination is EventDescriptionViewController
+        {
+            let vc = segue.destination as? EventDescriptionViewController
+            vc?.eventName = events[sender as! Int].name
+            vc?.eventPhoto = events[sender as! Int].photo!
+            vc?.eventDescriptionVar = events[sender as! Int].description
+            vc?.eventPlace = events[sender as! Int].place!
+            vc?.eventStartDate = events[sender as! Int].startDate
+            vc?.eventEndDate = events[sender as! Int].endDate!
+            vc?.eventStarHour = events[sender as! Int].startHour!
+            vc?.eventEndHour = events[sender as! Int].endHour!
+            vc?.eventPrice = events[sender as! Int].cost
+            vc?.eventCountry = events[sender as! Int].country!
+            vc?.eventCity = events[sender as! Int].city!
+            vc?.eventStreet = events[sender as! Int].street!
+        }
     }
     
 }

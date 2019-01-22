@@ -50,11 +50,10 @@ class Event {
     
     
     static func loadTickets(completion: @escaping (_ events: [Event]) -> Void){
-        guard let uid = Auth.auth().currentUser?.uid else {return}
         var ref: DatabaseReference!
         ref = Database.database().reference()
-        print(uid)
-        ref.child("usersAdmin/profile/\(uid)/events").observeSingleEvent(of: .value, with: { (snapshot) in
+  
+        ref.child("events").observeSingleEvent(of: .value, with: { (snapshot) in
             var events = [Event]()
             for event in snapshot.children.allObjects as! [DataSnapshot] {
                 //getting values
