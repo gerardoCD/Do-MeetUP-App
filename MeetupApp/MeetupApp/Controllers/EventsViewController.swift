@@ -145,6 +145,8 @@ class EventsViewController: UIViewController, UITableViewDelegate, UITableViewDa
             vc?.eventCountry = events[sender as! Int].country!
             vc?.eventCity = events[sender as! Int].city!
             vc?.eventStreet = events[sender as! Int].street!
+            vc?.eventId = events[sender as! Int].id
+            vc?.eventPhotoString = events[sender as! Int].photoString!
         }
     }
     

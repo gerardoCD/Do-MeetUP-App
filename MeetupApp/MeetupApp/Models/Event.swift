@@ -59,6 +59,7 @@ class Event {
                 //getting values
                 let eventObject = event.value as? [String: AnyObject]
                 let eventId = event.key
+                print(eventId)
                 let eventName  = eventObject?["Name"]
                 let eventDescription  = eventObject?["Description"]
                 let eventStartDate = eventObject?["StartDate"]
@@ -77,4 +78,24 @@ class Event {
         })
         
 }
+    
+    
+    static func loadEventsTickets(idEvent:String,completion: @escaping (_ events: [[String]]) -> Void){
+        var ref: DatabaseReference!
+        ref = Database.database().reference()
+        ref.child("eventsTickets/\(idEvent)").observeSingleEvent(of: .value, with: { (snapshot) in
+            var events = [[String]]()
+            print(idEvent)
+            let eventObject = snapshot.value as? [String: AnyObject]
+            let eventRemainingTickets = eventObject?["RemainingTickets"]
+            let eventAlltickets = eventObject?["AllTickets"]
+            events.append(eventRemainingTickets as! [String])
+            events.append(eventAlltickets as! [String])
+            completion(events)
+        })
+        
+    }
+    
+    
+    
 }
