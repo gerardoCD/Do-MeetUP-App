@@ -17,6 +17,9 @@
 		56CE731221AC3729009D4F75 /* MeetupAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56CE731121AC3729009D4F75 /* MeetupAppUITests.swift */; };
 		571B9E4621BF00290070138C /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 571B9E4521BF00290070138C /* SignUpViewController.swift */; };
 		573C918321C165CB007449B2 /* EventDescriptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 573C918221C165CB007449B2 /* EventDescriptionViewController.swift */; };
+		575657F121F82700005C2ECF /* PassKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 575657E921F82569005C2ECF /* PassKit.framework */; };
+		5756580321F8316C005C2ECF /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5756580221F8316C005C2ECF /* ViewController.m */; };
+		5756580621F83181005C2ECF /* BoardingPass.pkpass in Resources */ = {isa = PBXBuildFile; fileRef = 5756580521F8317E005C2ECF /* BoardingPass.pkpass */; };
 		575DFE4521E0052F007822E4 /* TicketTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 575DFE4421E0052F007822E4 /* TicketTableViewCell.swift */; };
 		5764F6BA21C9509400707A35 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5764F6B921C9509400707A35 /* MainViewController.swift */; };
 		57B7CE2A21C0AD8200C95819 /* EventsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B7CE2921C0AD8200C95819 /* EventsTableViewCell.swift */; };
@@ -67,6 +70,12 @@
 		56CE731321AC3729009D4F75 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		571B9E4521BF00290070138C /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		573C918221C165CB007449B2 /* EventDescriptionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDescriptionViewController.swift; sourceTree = "<group>"; };
+		575657E921F82569005C2ECF /* PassKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PassKit.framework; path = System/Library/Frameworks/PassKit.framework; sourceTree = SDKROOT; };
+		575657EB21F82569005C2ECF /* MeetupApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MeetupApp.entitlements; sourceTree = "<group>"; };
+		5756580121F8316C005C2ECF /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		5756580221F8316C005C2ECF /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		5756580421F83175005C2ECF /* ITRPassBook.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ITRPassBook.entitlements; sourceTree = "<group>"; };
+		5756580521F8317E005C2ECF /* BoardingPass.pkpass */ = {isa = PBXFileReference; lastKnownFileType = file; path = BoardingPass.pkpass; sourceTree = "<group>"; };
 		575DFE4421E0052F007822E4 /* TicketTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketTableViewCell.swift; sourceTree = "<group>"; };
 		5764F6B921C9509400707A35 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		57B7CE2921C0AD8200C95819 /* EventsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsTableViewCell.swift; sourceTree = "<group>"; };
@@ -92,6 +101,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				575657F121F82700005C2ECF /* PassKit.framework in Frameworks */,
 				BD6C7674A3596A60431192CC /* Pods_MeetupApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -118,6 +128,7 @@
 		5267F3B76C2C52B085F55AB8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				575657E921F82569005C2ECF /* PassKit.framework */,
 				1C99168B739DA94631271066 /* Pods_MeetupApp.framework */,
 				7D2E7669B93645DF91792340 /* Pods_MeetupAppTests.framework */,
 				8DEADD27C06B2CD8E2C24EEF /* Pods_MeetupAppUITests.framework */,
@@ -135,6 +146,8 @@
 				5764F6B921C9509400707A35 /* MainViewController.swift */,
 				C107706321DF1870005D3AE6 /* TicketsViewController.swift */,
 				C1912FFB21E15BFC0029D55E /* QRViewController.swift */,
+				5756580121F8316C005C2ECF /* ViewController.h */,
+				5756580221F8316C005C2ECF /* ViewController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -142,6 +155,7 @@
 		56CE72E521AC3727009D4F75 = {
 			isa = PBXGroup;
 			children = (
+				5756580521F8317E005C2ECF /* BoardingPass.pkpass */,
 				56CE72F021AC3727009D4F75 /* MeetupApp */,
 				56CE730521AC3729009D4F75 /* MeetupAppTests */,
 				56CE731021AC3729009D4F75 /* MeetupAppUITests */,
@@ -164,6 +178,8 @@
 		56CE72F021AC3727009D4F75 /* MeetupApp */ = {
 			isa = PBXGroup;
 			children = (
+				575657EB21F82569005C2ECF /* MeetupApp.entitlements */,
+				5756580421F83175005C2ECF /* ITRPassBook.entitlements */,
 				C107706521DF1A63005D3AE6 /* DataBase */,
 				57B7CE2821C0AD7000C95819 /* Models */,
 				5657163321B8D32B00702C77 /* Controllers */,
@@ -300,6 +316,12 @@
 				TargetAttributes = {
 					56CE72ED21AC3727009D4F75 = {
 						CreatedOnToolsVersion = 10.0;
+						LastSwiftMigration = 1010;
+						SystemCapabilities = {
+							com.apple.Wallet = {
+								enabled = 1;
+							};
+						};
 					};
 					56CE730121AC3729009D4F75 = {
 						CreatedOnToolsVersion = 10.0;
@@ -337,6 +359,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				56CE72FC21AC3729009D4F75 /* LaunchScreen.storyboard in Resources */,
+				5756580621F83181005C2ECF /* BoardingPass.pkpass in Resources */,
 				5684576B21AC4DEA0048EA93 /* GoogleService-Info.plist in Resources */,
 				57F9E22621D9B0CB009C9568 /* Assets.xcassets in Resources */,
 				56CE72F721AC3727009D4F75 /* Main.storyboard in Resources */,
@@ -470,6 +493,7 @@
 				5657163521B8D35D00702C77 /* LogInViewController.swift in Sources */,
 				C107706721DF1A7E005D3AE6 /* Firebase.swift in Sources */,
 				C10AB4EE21DA87800078C187 /* CodigoQR.swift in Sources */,
+				5756580321F8316C005C2ECF /* ViewController.m in Sources */,
 				57B7CE3021C0B81A00C95819 /* Event.swift in Sources */,
 				571B9E4621BF00290070138C /* SignUpViewController.swift in Sources */,
 				5764F6BA21C9509400707A35 /* MainViewController.swift in Sources */,
@@ -650,6 +674,8 @@
 			baseConfigurationReference = 8576C1A4F7EAFD8B8A438854 /* Pods-MeetupApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = MeetupApp/MeetupApp.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = ZCU3LP7DMT;
 				INFOPLIST_FILE = MeetupApp/Info.plist;
@@ -659,6 +685,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = UNAM.MeetupApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -669,6 +696,8 @@
 			baseConfigurationReference = 3C665BC41ABF96C3E2B71322 /* Pods-MeetupApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = MeetupApp/MeetupApp.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = ZCU3LP7DMT;
 				INFOPLIST_FILE = MeetupApp/Info.plist;
