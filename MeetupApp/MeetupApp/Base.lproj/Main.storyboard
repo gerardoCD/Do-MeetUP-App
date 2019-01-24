@@ -1181,10 +1181,16 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U8b-1w-feF">
-                                <rect key="frame" x="164" y="584" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U8b-1w-feF">
+                                <rect key="frame" x="85.5" y="617" width="204" height="33"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="33" id="4M2-iA-PCP"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="204" id="ilu-dV-YLV"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
+                                <state key="normal" title="Add this to your Wallet App!">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
                                 <connections>
                                     <segue destination="sFW-jM-PbY" kind="show" id="TKI-Oj-g0d"/>
                                 </connections>
@@ -1212,7 +1218,9 @@
                             <constraint firstItem="Fje-XB-FhV" firstAttribute="trailing" secondItem="rbY-Sj-pHG" secondAttribute="trailing" constant="16" id="v70-h2-Ph9"/>
                             <constraint firstItem="Fje-XB-FhV" firstAttribute="trailing" secondItem="XCu-wd-SUa" secondAttribute="trailing" constant="16" id="vaq-qQ-s6E"/>
                             <constraint firstItem="7tt-d9-IfO" firstAttribute="leading" secondItem="Fje-XB-FhV" secondAttribute="leading" id="wac-qM-mqc"/>
+                            <constraint firstItem="U8b-1w-feF" firstAttribute="centerX" secondItem="TuW-a9-lH2" secondAttribute="centerX" id="wus-eb-vfz"/>
                             <constraint firstItem="rbY-Sj-pHG" firstAttribute="leading" secondItem="Fje-XB-FhV" secondAttribute="leading" constant="16" id="zD2-k2-AM1"/>
+                            <constraint firstItem="Fje-XB-FhV" firstAttribute="bottom" secondItem="U8b-1w-feF" secondAttribute="bottom" constant="17" id="zFO-dc-yUC"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Fje-XB-FhV"/>
                         <connections>
@@ -1249,22 +1257,44 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kZr-wZ-dPw">
-                                <rect key="frame" x="184" y="318" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gradient" translatesAutoresizingMaskIntoConstraints="NO" id="Kuu-my-0BJ">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="wallet" translatesAutoresizingMaskIntoConstraints="NO" id="vwI-RJ-LPg">
+                                <rect key="frame" x="45.5" y="267.5" width="284" height="132"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="284" id="G4Y-oq-p4g"/>
+                                    <constraint firstAttribute="height" constant="132" id="o7G-wj-C4r"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kZr-wZ-dPw">
+                                <rect key="frame" x="45" y="287.5" width="285" height="92"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="92" id="Ocf-AD-iJH"/>
+                                    <constraint firstAttribute="width" constant="285" id="wMS-6M-4dI"/>
+                                </constraints>
                                 <connections>
                                     <action selector="addPassButtonPressed:" destination="sFW-jM-PbY" eventType="touchUpInside" id="akK-Aa-GMf"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="vwI-RJ-LPg" firstAttribute="centerX" secondItem="8uQ-na-slv" secondAttribute="centerX" id="33I-eG-4KW"/>
+                            <constraint firstItem="Kuu-my-0BJ" firstAttribute="leading" secondItem="una-Bm-JFk" secondAttribute="leading" id="95E-Yx-lr7"/>
+                            <constraint firstItem="vwI-RJ-LPg" firstAttribute="centerY" secondItem="8uQ-na-slv" secondAttribute="centerY" id="M5F-tw-XXs"/>
+                            <constraint firstItem="Kuu-my-0BJ" firstAttribute="trailing" secondItem="una-Bm-JFk" secondAttribute="trailing" id="NVm-P6-MhW"/>
+                            <constraint firstItem="Kuu-my-0BJ" firstAttribute="top" secondItem="una-Bm-JFk" secondAttribute="top" id="OO0-J0-7zi"/>
+                            <constraint firstItem="Kuu-my-0BJ" firstAttribute="bottom" secondItem="una-Bm-JFk" secondAttribute="bottom" id="Vef-Mb-su5"/>
+                            <constraint firstItem="kZr-wZ-dPw" firstAttribute="centerY" secondItem="8uQ-na-slv" secondAttribute="centerY" id="gxF-bI-3YM"/>
+                            <constraint firstItem="kZr-wZ-dPw" firstAttribute="centerX" secondItem="8uQ-na-slv" secondAttribute="centerX" id="yMS-g3-1jP"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="una-Bm-JFk"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NcY-Gh-Yhi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3589" y="1703"/>
+            <point key="canvasLocation" x="3588" y="1702.3988005997003"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="USh-9V-8f5">
@@ -1320,6 +1350,7 @@
         <image name="peopleWhite" width="700" height="512"/>
         <image name="ticket" width="22.5" height="22.5"/>
         <image name="tree" width="512" height="512"/>
+        <image name="wallet" width="576" height="178"/>
         <namedColor name="Interfaces">
             <color red="0.12156862745098039" green="0.23529411764705882" blue="0.53333333333333333" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>

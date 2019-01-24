@@ -17,6 +17,9 @@
 		56CE731221AC3729009D4F75 /* MeetupAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56CE731121AC3729009D4F75 /* MeetupAppUITests.swift */; };
 		571B9E4621BF00290070138C /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 571B9E4521BF00290070138C /* SignUpViewController.swift */; };
 		573C918321C165CB007449B2 /* EventDescriptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 573C918221C165CB007449B2 /* EventDescriptionViewController.swift */; };
+		5741726921F836D4005D511C /* Coupon.pkpass in Resources */ = {isa = PBXBuildFile; fileRef = 5741726821F836D0005D511C /* Coupon.pkpass */; };
+		5741726B21F8374F005D511C /* Generic.pkpass in Resources */ = {isa = PBXBuildFile; fileRef = 5741726A21F8374F005D511C /* Generic.pkpass */; };
+		5741726D21F83758005D511C /* StoreCard.pkpass in Resources */ = {isa = PBXBuildFile; fileRef = 5741726C21F83758005D511C /* StoreCard.pkpass */; };
 		575657F121F82700005C2ECF /* PassKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 575657E921F82569005C2ECF /* PassKit.framework */; };
 		5756580321F8316C005C2ECF /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5756580221F8316C005C2ECF /* ViewController.m */; };
 		5756580621F83181005C2ECF /* BoardingPass.pkpass in Resources */ = {isa = PBXBuildFile; fileRef = 5756580521F8317E005C2ECF /* BoardingPass.pkpass */; };
@@ -70,6 +73,9 @@
 		56CE731321AC3729009D4F75 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		571B9E4521BF00290070138C /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		573C918221C165CB007449B2 /* EventDescriptionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDescriptionViewController.swift; sourceTree = "<group>"; };
+		5741726821F836D0005D511C /* Coupon.pkpass */ = {isa = PBXFileReference; lastKnownFileType = file; path = Coupon.pkpass; sourceTree = "<group>"; };
+		5741726A21F8374F005D511C /* Generic.pkpass */ = {isa = PBXFileReference; lastKnownFileType = file; path = Generic.pkpass; sourceTree = "<group>"; };
+		5741726C21F83758005D511C /* StoreCard.pkpass */ = {isa = PBXFileReference; lastKnownFileType = file; path = StoreCard.pkpass; sourceTree = "<group>"; };
 		575657E921F82569005C2ECF /* PassKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PassKit.framework; path = System/Library/Frameworks/PassKit.framework; sourceTree = SDKROOT; };
 		575657EB21F82569005C2ECF /* MeetupApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MeetupApp.entitlements; sourceTree = "<group>"; };
 		5756580121F8316C005C2ECF /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
@@ -155,6 +161,9 @@
 		56CE72E521AC3727009D4F75 = {
 			isa = PBXGroup;
 			children = (
+				5741726C21F83758005D511C /* StoreCard.pkpass */,
+				5741726A21F8374F005D511C /* Generic.pkpass */,
+				5741726821F836D0005D511C /* Coupon.pkpass */,
 				5756580521F8317E005C2ECF /* BoardingPass.pkpass */,
 				56CE72F021AC3727009D4F75 /* MeetupApp */,
 				56CE730521AC3729009D4F75 /* MeetupAppTests */,
@@ -359,10 +368,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				56CE72FC21AC3729009D4F75 /* LaunchScreen.storyboard in Resources */,
+				5741726921F836D4005D511C /* Coupon.pkpass in Resources */,
 				5756580621F83181005C2ECF /* BoardingPass.pkpass in Resources */,
+				5741726B21F8374F005D511C /* Generic.pkpass in Resources */,
 				5684576B21AC4DEA0048EA93 /* GoogleService-Info.plist in Resources */,
 				57F9E22621D9B0CB009C9568 /* Assets.xcassets in Resources */,
 				56CE72F721AC3727009D4F75 /* Main.storyboard in Resources */,
+				5741726D21F83758005D511C /* StoreCard.pkpass in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -38,7 +38,7 @@
     NSData *data = [NSData dataWithContentsOfFile:passPath];
     NSError *error;
     
-    pass = [[PKPass alloc] initWithData:data error:&error];
+   pass = [[PKPass alloc] initWithData:data error:&error];
     
     if (error!=nil) {
         [[[UIAlertView alloc] initWithTitle:@"Passes error"
