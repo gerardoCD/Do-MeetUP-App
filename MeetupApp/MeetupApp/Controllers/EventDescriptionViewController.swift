@@ -154,6 +154,7 @@ class EventDescriptionViewController: UIViewController, UITextFieldDelegate, UII
                         eventventRemainingTicketsOne.remove(at: contador)
                         contador += 1
                     }
+                    contador = 0
                     let databaseRef2 = Database.database().reference().child("eventsTickets/")
                     let allTickets = [
                         key: [
@@ -177,23 +178,25 @@ class EventDescriptionViewController: UIViewController, UITextFieldDelegate, UII
                         ] as [String:Any]
                     
                     databaseRef.updateChildValues(userObject)
+                    let cost: Double = self.eventPrice
+                    let total = cost*Double(numberTickets)
                     
+                    let alert = UIAlertController(title: "Purchase made", message: "Total cost: \(total). Enjoy it!", preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+                    self.present(alert, animated: true)
                     
                     
                 }else{
-                    //No hay Disponibilidad
+                    let alert = UIAlertController(title: "Sorry", message: "We do not have enough tickets for the event", preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+                    self.present(alert, animated: true)
                 }
             }
             
-            ///
-           // let tickets = generateTickets(number:numberTickets)
- 
-            let cost: Double = eventPrice
-            let total = cost*Double(numberTickets)
+
+
             
-            let alert = UIAlertController(title: "Purchase made", message: "Total cost: \(total). Enjoy it!", preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
-            self.present(alert, animated: true)
+           
             
             
         } else {
