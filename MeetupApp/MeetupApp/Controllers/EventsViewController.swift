@@ -15,11 +15,17 @@ var myIndex = 0
 class EventsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var tableView: UITableView!
+    var refresher: UIRefreshControl!
+    
     var events = [Event]()
     
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        refresher = UIRefreshControl()
+        refresher.attributedTitle = NSAttributedString(string: "Update Events")
+        refresher.addTarget(self, action: #selector(EventsViewController.loadEventInfo), for: UIControl.Event.valueChanged)
+        tableView.addSubview(refresher)
         loadEventInfo()
     }
     override func viewDidAppear(_ animated: Bool) {
@@ -28,85 +34,11 @@ class EventsViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     
     //Datos hardcodeados para probar
-    func loadEventInfo(){
-            var ref: DatabaseReference!
-            ref = Database.database().reference()
-            ref.child("events").observe(DataEventType.value, with: { (snapshot) in
-            //let username = value?["username"] as? String ?? ""
-            //let user = User(username: username)
-//                for (_, valor) in value!{
-//                    let auxEvent = Event()
-//                    for(llave2, valor2) in valor as! NSDictionary{
-//                       // print(llave2)
-//                        if llave2 as! String == "Date"{
-//                            auxEvent.date = valor2 as! String
-//                        }else if llave2 as! String == "Description"{
-//                            auxEvent.description = valor2 as! String
-//                        }else if llave2 as! String == "Image"{
-//                           /* let url = URL(string: llave2 as! String)
-//                            let data = try? Data(contentsOf: url!)
-//                            auxEvent.photo = UIImage(data: data!)*/
-//                        }else if llave2 as! String == "Map"{
-//                            auxEvent.place = valor2 as! String
-//                        }else if llave2 as! String == "Name"{
-//                            auxEvent.name = valor2 as! String
-//                        }else if llave2 as! String == "Price"{
-//                            auxEvent.cost = valor2 as! Double
-//                        }
-//                         self.events.append(auxEvent)
-//                    }
-                var eventlistaux = [[String]]()
-                for event in snapshot.children.allObjects as! [DataSnapshot] {
-                    //getting values
-                    var auxList = [String]()
-                    print(event.key)
-                    let eventObject = event.value as? [String: AnyObject]
-                    let eventName  = eventObject?["Name"]
-                    let eventDescription  = eventObject?["Description"]
-                    let eventStartDate = eventObject?["StartDate"]
-                    let eventImage = eventObject?["Image"]
-                    let eventMapa = eventObject?["Map"]
-                    let eventPrice = eventObject?["Price"]
-                    let eventCountry = eventObject?["Country"]
-                    let eventCity = eventObject?["City"]
-                    let eventStreet = eventObject?["Street"]
-                    let eventStartHour = eventObject?["StartHour"]
-                    let eventEndHour = eventObject?["EndHour"]
-                    let eventEndDate = eventObject?["EndDate"]
-                    //print(eventEndDate)
-                    auxList.append(eventStartDate as! String)
-                    auxList.append(eventDescription as! String)
-                    auxList.append(eventImage as! String)
-                    auxList.append(eventMapa as! String)
-                    auxList.append(eventName as! String)
-                    auxList.append(String(eventPrice as! Double))
-                    auxList.append(event.key)
-                    auxList.append(eventCountry as! String)
-                    auxList.append(eventCity as! String)
-                    auxList.append(eventStreet as! String)
-                    auxList.append(eventStartHour as! String)
-                    auxList.append(eventEndHour as! String)
-                    auxList.append(eventEndDate as! String)
-                    eventlistaux.append(auxList)
-                   // debugPrint(auxList)
-                }
-                UserDefaults.standard.set(eventlistaux, forKey: "Events")
-                //self.tableView.reloadData()
-               // debugPrint(eventlistaux)
-        })
-        
-        guard let eventArrayString = UserDefaults.standard.array(forKey: "Events")else { return }
-        for eventOne in eventArrayString as! [[String]]{
-//            let url = URL(string: eventOne[2] )
-//            let data = try? Data(contentsOf: url!)
-//            let image  = UIImage(data: data!)
-            events.append(Event(id: eventOne[6], name: eventOne[4], description: eventOne[1], photo: nil, place: eventOne[3], date: nil, cost: Double(eventOne[5])!, photoString: eventOne[2], tickets: nil, startDate: eventOne[0], endDate: eventOne[12], country: eventOne[7], city: eventOne[8], street: eventOne[9], startHour: eventOne[10], endHour: eventOne[11]))
-            //print(eventOne[7] + "  " + eventOne[8] + "  " + eventOne[9])
-            
+    @objc func loadEventInfo(){
+        Event.loadTickets { (eventsAux) in
+            self.events = eventsAux
+            self.tableView?.reloadData()
         }
-       // tableView.reloadData()
-        
-        
     }
 
     // MARK: - Table view data source
@@ -142,7 +74,8 @@ class EventsViewController: UIViewController, UITableViewDelegate, UITableViewDa
             let url = URL(string: event.photoString!)
             let data = try? Data(contentsOf: url!)
             let image  = UIImage(data: data!)
-             cell.eventImage.image = image
+            self.events[indexPath.row].photo = image
+            cell.eventImage.image = image
         }
         cell.accessoryType = .disclosureIndicator
         return cell
@@ -193,4 +126,31 @@ class EventsViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
         return [share, calendar]
     }
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?)
+    {
+        if segue.destination is EventDescriptionViewController
+        {
+            let vc = segue.destination as? EventDescriptionViewController
+            vc?.eventName = events[sender as! Int].name
+            vc?.eventPhoto = events[sender as! Int].photo!
+            vc?.eventDescriptionVar = events[sender as! Int].description
+            vc?.eventPlace = events[sender as! Int].place!
+            vc?.eventStartDate = events[sender as! Int].startDate
+            vc?.eventEndDate = events[sender as! Int].endDate!
+            vc?.eventStarHour = events[sender as! Int].startHour!
+            vc?.eventEndHour = events[sender as! Int].endHour!
+            vc?.eventPrice = events[sender as! Int].cost
+            vc?.eventCountry = events[sender as! Int].country!
+            vc?.eventCity = events[sender as! Int].city!
+            vc?.eventStreet = events[sender as! Int].street!
+            vc?.eventId = events[sender as! Int].id
+            vc?.eventPhotoString = events[sender as! Int].photoString!
+        }
+    }
+    
+    
+    
+    
 }

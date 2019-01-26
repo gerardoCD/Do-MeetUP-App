@@ -26,9 +26,22 @@ class EventDescriptionViewController: UIViewController, UITextFieldDelegate, UII
     @IBOutlet weak var sliderBar: UISlider!
     @IBOutlet weak var mapView: MKMapView!
     
+    //////----------
+    var eventName = ""
+    var eventPhoto = UIImage()
+    var eventDescriptionVar = ""
+    var eventPlace = ""
+    var eventStartDate = ""
+    var eventEndDate = ""
+    var eventStarHour = ""
+    var eventEndHour = ""
+    var eventPrice = 0.0
+    var eventCountry = ""
+    var eventCity = ""
+    var eventStreet = ""
+    var eventId = ""
+    var eventPhotoString = ""
     
-    
-
     var event: Event?
     var eve = EventsViewController()
     //Datos hardcodeados para probar ubicación
@@ -36,32 +49,27 @@ class EventDescriptionViewController: UIViewController, UITextFieldDelegate, UII
     var country = ""
     var city = ""
     var street = ""
+    
     lazy var geocoder = CLGeocoder()
     
    
     override func viewDidLoad() {
         
         super.viewDidLoad()
-        eve.loadEventInfo()
+       // eve.loadEventInfo()
         //print(eve.events[myIndex].name)
-        eventTitleLabel.text = eve.events[myIndex].name
-        imageEvent.image = eve.events[myIndex].photo
-        eventDescription.text = eve.events[myIndex].description
-        whereDescription.text = eve.events[myIndex].place
-        dateDescription.text = eve.events[myIndex].startDate
-        endDate.text = eve.events[myIndex].endDate
-        startHour.text =  eve.events[myIndex].startHour
-        endHour.text = eve.events[myIndex].endHour
-        //endDate.text = eve.events[myIndex].endDate
-        //startHour.text = eve.events[myIndex]
-        //endHour.text = eve.events[myIndex]
-        priceDescription.text = String(eve.events[myIndex].cost)
-        country = eve.events[myIndex].country!
-        street = eve.events[myIndex].street!
-        city = eve.events[myIndex].city!
-//        print(country)
-//        print(street)
-//        print(city)
+        eventTitleLabel.text = eventName
+        imageEvent.image = eventPhoto
+        eventDescription.text = eventDescriptionVar
+        whereDescription.text = eventPlace
+        dateDescription.text = eventStartDate
+        endDate.text = eventEndDate
+        startHour.text =  eventStarHour
+        endHour.text = eventEndHour
+        priceDescription.text = String(eventPrice)
+        country = eventCountry
+        street = eventStreet
+        city = eventCity
         //Login button aspects
         buyButton.layer.cornerRadius = 8.0
         buyButton.layer.masksToBounds = true
@@ -130,30 +138,65 @@ class EventDescriptionViewController: UIViewController, UITextFieldDelegate, UII
             // User is signed in
             guard let uid = Auth.auth().currentUser?.uid else { return }
 
-            let databaseRef = Database.database().reference().child("users/profile/\(uid)/events")
-            let key = eve.events[myIndex].id
+           
+            let key = eventId
             // let key = databaseRef.childByAutoId().key NO BORRARRRRRRR
             let numberTickets = Int(sliderBar.value)
-            let tickets = generateTickets(number:numberTickets)
-            //print(tickets)
-            let userObject = [
-                key: [
-                    "Name": eve.events[myIndex].name,
-                    "Description": eve.events[myIndex].description,
-                    "Image": eve.events[myIndex].photoString!,
-                    "Start": eve.events[myIndex].startDate,
-                    "Tickets": tickets
-                ]
-                ] as [String:Any]
+            var tickestBuy = [String]()
+            Event.loadEventsTickets(idEvent: key) { (eventRemainingTickets) in
+                var eventventRemainingTicketsOne = eventRemainingTickets[0]
+                let eventventRemainingTicketsTwo = eventRemainingTickets[1]
+                if self.validateNumberTickets(numberTickets: numberTickets, tickets: eventventRemainingTicketsOne){
+                    // Si hay disponibiidad
+                    var contador = 0
+                    while (contador <= numberTickets - 1) {
+                        tickestBuy.append(eventventRemainingTicketsOne[contador])
+                        eventventRemainingTicketsOne.remove(at: contador)
+                        contador += 1
+                    }
+                    contador = 0
+                    let databaseRef2 = Database.database().reference().child("eventsTickets/")
+                    let allTickets = [
+                        key: [
+                            "AllTickets": eventventRemainingTicketsTwo,
+                            "RemainingTickets": eventventRemainingTicketsOne
+                        ]
+                        ] as [String:Any]
+                    
+                    databaseRef2.updateChildValues(allTickets)
+                    
+                    let databaseRef = Database.database().reference().child("users/profile/\(uid)/events")
+                    let userObject = [
+                        key: [
+                            "Name": self.eventName,
+                            "Description": self.eventDescriptionVar,
+                            "Image": self.eventPhotoString
+                            ,
+                            "Start": self.eventStartDate,
+                            "Tickets": tickestBuy
+                        ]
+                        ] as [String:Any]
+                    
+                    databaseRef.updateChildValues(userObject)
+                    let cost: Double = self.eventPrice
+                    let total = cost*Double(numberTickets)
+                    
+                    let alert = UIAlertController(title: "Purchase made", message: "Total cost: \(total). Enjoy it!", preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+                    self.present(alert, animated: true)
+                    
+                    
+                }else{
+                    let alert = UIAlertController(title: "Sorry", message: "We do not have enough tickets for the event", preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+                    self.present(alert, animated: true)
+                }
+            }
+            
 
-            databaseRef.updateChildValues(userObject)
+
             
-            let cost: Double = eve.events[myIndex].cost
-            let total = cost*Double(numberTickets)
-            
-            let alert = UIAlertController(title: "Purchase made", message: "Total cost: \(total). Enjoy it!", preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: {(alert: UIAlertAction!) in  self.navigationController?.popToRootViewController(animated: true)}))
-            self.present(alert, animated: true)
+           
             
             
         } else {
@@ -177,6 +220,19 @@ class EventDescriptionViewController: UIViewController, UITextFieldDelegate, UII
         }
         return tickets
     }
+    
+    func validateNumberTickets(numberTickets:Int,tickets:[String]) -> Bool{
+        
+        if tickets.count < numberTickets{
+            return false
+        }else{
+            return true
+        }
+        
+    }
+    
+    
+    
     
     
 }
