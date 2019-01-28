@@ -150,8 +150,8 @@ class EventDescriptionViewController: UIViewController, UITextFieldDelegate, UII
                     // Si hay disponibiidad
                     var contador = 0
                     while (contador <= numberTickets - 1) {
-                        tickestBuy.append(eventventRemainingTicketsOne[contador])
-                        eventventRemainingTicketsOne.remove(at: contador)
+                        tickestBuy.append(eventventRemainingTicketsOne.first!)
+                        eventventRemainingTicketsOne.removeFirst()
                         contador += 1
                     }
                     contador = 0
@@ -182,7 +182,7 @@ class EventDescriptionViewController: UIViewController, UITextFieldDelegate, UII
                     let total = cost*Double(numberTickets)
                     
                     let alert = UIAlertController(title: "Purchase made", message: "Total cost: \(total). Enjoy it!", preferredStyle: .alert)
-                    alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+                    alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: {(alert: UIAlertAction!) in  self.navigationController?.popToRootViewController(animated: true)}))
                     self.present(alert, animated: true)
                     
                     
