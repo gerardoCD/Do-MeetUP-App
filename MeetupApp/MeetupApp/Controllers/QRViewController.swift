@@ -34,7 +34,7 @@ class QRViewController: UIViewController {
     }
     
     @IBAction func swipeLeft(_ sender: UISwipeGestureRecognizer) {
-        print("Izquierda")
+
         if codesQRImages.count == 1{
             imgQR.image = codesQRImages[0]
             lblContador.text = " 1 / \(codesQRImages.count )"
@@ -50,11 +50,11 @@ class QRViewController: UIViewController {
                 
             }
         }
-        print(index)
+
     }
     
     @IBAction func swipeRigth(_ sender: UISwipeGestureRecognizer) {
-        print("Derecha")
+
         if codesQRImages.count == 1{
             imgQR.image = codesQRImages[0]
             lblContador.text = " 1 / \(codesQRImages.count )"
@@ -70,7 +70,7 @@ class QRViewController: UIViewController {
                 
             }
         }
-        print(index)
+
         
     }
     
@@ -81,16 +81,6 @@ class QRViewController: UIViewController {
         }
         return images
     }
-    
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
